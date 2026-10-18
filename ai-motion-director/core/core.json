@@ -1,0 +1,36 @@
+{
+  "id": "core",
+  "name": "AI Motion Director Core",
+  "version": "1.0.0",
+  "contract_version": 1,
+  "entry": "SKILL.md",
+  "responsibilities": [
+    "interpretar a intenção e o briefing",
+    "decidir a abordagem criativa e quais módulos acionar",
+    "coordenar o ciclo Entender→Aprimorar",
+    "selecionar técnicas e motor conforme objetivo e viabilidade",
+    "resolver conflitos entre recomendações",
+    "verificar coerência narrativa/imagem/som/execução",
+    "avaliar resultados e decidir se há melhorias"
+  ],
+  "flow": [
+    "Entender",
+    "Conceber",
+    "Comparar",
+    "Estruturar",
+    "Planejar",
+    "Produzir",
+    "Avaliar",
+    "Aprimorar"
+  ],
+  "decision_flow": "INTENT → PROFILE → MODULES → STYLE ALIAS → ENGINE → SHOT PARAMETERS → FINAL PROMPT/RENDER",
+  "module_glob": "modules/*/module.json",
+  "must_not_contain": [
+    "catálogo de técnicas",
+    "regras completas de storytelling",
+    "prompts por ferramenta",
+    "implementação de motores"
+  ],
+  "max_entry_lines": 150,
+  "contracts_dir": "contracts"
+}

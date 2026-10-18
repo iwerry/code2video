@@ -1,0 +1,85 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Perfil de entrega (formato/plataforma) — usado pelo Core e pelo template",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "width",
+    "height",
+    "aspect",
+    "fps",
+    "duration_range_s",
+    "safe_zone",
+    "notes"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "$ref": "common.schema.json#/definitions/id"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "width": {
+      "type": "integer",
+      "minimum": 16
+    },
+    "height": {
+      "type": "integer",
+      "minimum": 16
+    },
+    "aspect": {
+      "type": "string",
+      "enum": [
+        "16:9",
+        "9:16",
+        "1:1",
+        "4:5"
+      ]
+    },
+    "fps": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "duration_range_s": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "safe_zone": {
+      "type": "object",
+      "required": [
+        "top",
+        "bottom",
+        "side"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "top": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 0.5
+        },
+        "bottom": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 0.5
+        },
+        "side": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 0.5
+        }
+      }
+    },
+    "notes": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

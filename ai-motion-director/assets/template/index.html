@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Motion — template</title>
+<style>html,body{margin:0;background:#000;overflow:hidden}canvas{display:block}</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<script src="motion-kit.js"></script>
+<script>
+/* TEMPLATE: pequena demo narrativa "do caos à ordem" (9s, 1920x1080).
+ * Troque META, PALETTE e as cenas. Contrato com render.py: window.__meta e window.__seek(t).
+ * Regra de ouro: draw() só depende de `t`. Sem Math.random/Date.now/estado acumulado.
+ *
+ * Linha do tempo (cada movimento tem uma função narrativa):
+ *  0.0–3.2  CAOS      pontos dispersos tremem; tensão sobe (inExpo)
+ *  3.2–3.7  ESTALO    impacto sonoro previsto em 3.2: shake + flash + convergência
+ *  3.7–6.2  ORDEM     pontos formam um círculo que se desenha (trim) e vira marca
+ *  6.2–9.0  PROMESSA  título cinético + linha de apoio; respiro final
+ */
+// Formatos: 16:9 = 1920x1080 · 9:16 = 1080x1920 · 1:1 = 1080x1080. O render usa META.fps se você não passar --fps.
+const META = { width: 1920, height: 1080, duration: 9, fps: 30 };
+const PALETTE = { bg: '#0b0d12', ink: '#f4f1ea', accent: '#ff5a36', dim: '#5b6272' };
+window.__meta = META;
+// SOM: lista única de eventos; o render.py sintetiza o áudio a partir dela (tipos: impact riser whoosh tick pop drone shimmer).
+// Use as MESMAS constantes de tempo do visual (IMPACT) para a sincronia nunca derivar.
+const IMPACT_T = 3.2;
+window.__sfx = [
+  { t: 0,            type: 'riser',   dur: IMPACT_T, gain: .6 },
+  { t: IMPACT_T,     type: 'impact',  gain: .9 },
+  { t: IMPACT_T+.4,  type: 'whoosh',  gain: .4 },
+  { t: 5.6,          type: 'shimmer', gain: .4 },
+  { t: 6.1,          type: 'tick',    gain: .5 },
+  { t: 6.55,         type: 'tick',    gain: .5 },
+];
+
+const cv = document.getElementById('c'); cv.width = META.width; cv.height = META.height;
+window.__canvas = cv; const g = cv.getContext('2d'); const W = META.width, H = META.height, ctx = { W, H };
+const { E, prog, lerp, clamp } = M;
+
+// ----- dados fixos (semente) -----
+const N = 260, IMPACT = IMPACT_T;
+const seeds = M.particles(N, 7, (r, i) => ({
+  x: r() * W, y: r() * H, ph: r() * 6.28, sp: .6 + r() * 1.4,
+  a: i / N * 6.2832, d: 0.0 + r() * 12,
+}));
+const RING = { cx: W / 2, cy: H / 2 - 40, r: 190 };
+
+function drawBg(t) {
+  g.fillStyle = PALETTE.bg; g.fillRect(0, 0, W, H);
+  const gr = g.createRadialGradient(W / 2, H / 2, 0, W / 2, H / 2, H * .8);
+  gr.addColorStop(0, 'rgba(255,90,54,0.06)'); gr.addColorStop(1, 'rgba(0,0,0,0)');
+  g.fillStyle = gr; g.fillRect(0, 0, W, H);
+}
+
+const scenes = [
+  { start: 0, end: 9, draw(g, t) {
+    drawBg(t);
+    const [sx, sy] = M.shake(t, IMPACT, { dur: .6, amp: 22 });
+    g.save(); g.translate(sx, sy);
+
+    // câmera: empurra devagar durante a tensão, solta no estalo
+    const push = 1 + .06 * E.inCubic(prog(t, 0, IMPACT)) - .06 * E.outExpo(prog(t, IMPACT, IMPACT + .8));
+    g.translate(W / 2, H / 2); g.scale(push, push); g.translate(-W / 2, -H / 2);
+
+    // CAOS → ESTALO → ORDEM: cada ponto interpola de posição caótica para o anel
+    const conv = E.outExpo(prog(t, IMPACT, IMPACT + .9));
+    const tension = E.inExpo(prog(t, 0, IMPACT));
+    seeds.forEach(s => {
+      const jx = M.wiggle(t, 3 + 6 * tension, 14 + 40 * tension, s.ph), jy = M.wiggle(t, 3 + 6 * tension, 14 + 40 * tension, s.ph + 9);
+      const cx = s.x + jx + Math.sin(t * s.sp + s.ph) * 20, cy = s.y + jy + Math.cos(t * s.sp + s.ph) * 20;
+      const tx = RING.cx + Math.cos(s.a) * (RING.r + s.d), ty = RING.cy + Math.sin(s.a) * (RING.r + s.d);
+      const x = lerp(cx, tx, conv), y = lerp(cy, ty, conv);
+      const fade = 1 - .85 * E.inOutCubic(prog(t, IMPACT + .6, IMPACT + 1.4)); // pontos cedem lugar ao traço
+      g.globalAlpha = (.55 + .45 * tension * (1 - conv * .3)) * fade;
+      g.fillStyle = conv > .5 ? PALETTE.accent : PALETTE.ink;
+      g.beginPath(); g.arc(x, y, 3 + 3 * tension, 0, 6.2832); g.fill();
+    });
+    g.globalAlpha = 1;
+
+    // ORDEM: anel que se desenha (trim path) e depois respira
+    if (t > IMPACT + .4) {
+      const pts = M.circlePts(RING.cx, RING.cy, RING.r, 160), L = M.polyLen(pts), path = M.polyPath(pts);
+      g.lineWidth = 10; g.lineCap = 'round'; g.strokeStyle = PALETTE.accent;
+      const k = E.inOutCubic(prog(t, IMPACT + .4, IMPACT + 2.2));
+      M.glow(g, PALETTE.accent, 28, () => M.trim(g, path, L, 0, k));
+      // núcleo nasce com mola (overshoot = vida)
+      const core = M.spring(t - (IMPACT + 1.9), { freq: 2.6, zeta: .38 });
+      g.fillStyle = PALETTE.ink; g.beginPath(); g.arc(RING.cx, RING.cy, 46 * core, 0, 6.2832); g.fill();
+    }
+    g.restore();
+
+    // flash do impacto (1 frame de verdade conta mais que 10 de enfeite)
+    const fl = 1 - prog(t, IMPACT, IMPACT + .12); if (t >= IMPACT && fl > 0) { g.fillStyle = `rgba(255,255,255,${.55 * fl})`; g.fillRect(0, 0, W, H); }
+
+    // PROMESSA: título cinético; anel sobe para abrir espaço
+    const k2 = E.inOutCubic(prog(t, 6.0, 6.8));
+    if (t > 5.9) {
+      M.kinetic(g, 'DA CONFUSÃO', W / 2, H / 2 + 250 - 0 * k2, t, 6.1, { size: 108, color: PALETTE.ink, stagger: .03, rise: 50 });
+      M.kinetic(g, 'À CLAREZA.', W / 2, H / 2 + 370, t, 6.55, { size: 108, color: PALETTE.accent, stagger: .03, rise: 50 });
+    }
+    M.vignette(g, W, H, .5);
+    M.grain(g, W, H, t, .05);
+    // respiro final: fade curto para preto
+    const out = prog(t, 8.5, 9); if (out > 0) { g.fillStyle = `rgba(0,0,0,${out})`; g.fillRect(0, 0, W, H); }
+  } },
+];
+
+window.__seek = t => { g.setTransform(1, 0, 0, 1, 0, 0); g.globalAlpha = 1; M.runScenes(g, scenes, Math.min(t, META.duration - 1e-4), ctx); };
+
+// Prévia no navegador (não usada pelo render): ?play toca em tempo real
+if (location.search.includes('play')) { const t0 = performance.now(); (function loop() { window.__seek(((performance.now() - t0) / 1000) % META.duration); requestAnimationFrame(loop); })(); }
+else window.__seek(0);
+// só libera o render depois das fontes (medidas de texto dependem delas)
+M.fontsReady(['800 100px Inter']).then(() => { window.__seek(0); window.__ready = true; });
+</script>
+</body>
+</html>

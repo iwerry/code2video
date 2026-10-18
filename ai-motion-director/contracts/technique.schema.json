@@ -1,0 +1,201 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Técnica de motion graphics",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "category",
+    "narrative_intents",
+    "emotions",
+    "motion_type",
+    "contexts",
+    "complexity",
+    "feasibility",
+    "engines",
+    "requirements",
+    "when_to_use",
+    "why",
+    "risks",
+    "alternatives"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "$ref": "common.schema.json#/definitions/id"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "aliases": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "typography",
+        "shape-vector",
+        "camera",
+        "transition",
+        "time",
+        "particles-simulation",
+        "3d-compositing",
+        "character",
+        "data-ui",
+        "light-fx",
+        "audio-reactive",
+        "foundations"
+      ]
+    },
+    "narrative_intents": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "enum": [
+          "hook",
+          "tension",
+          "impact",
+          "transformation",
+          "process",
+          "read-text",
+          "scale",
+          "depth",
+          "life-weight",
+          "speed-change",
+          "order-from-chaos",
+          "tech-data",
+          "warmth",
+          "guide-between-ideas",
+          "brand",
+          "rhythm",
+          "pause",
+          "closure",
+          "reveal",
+          "emphasis",
+          "continuity"
+        ]
+      }
+    },
+    "emotions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "enum": [
+          "tension",
+          "surprise",
+          "empathy",
+          "enthusiasm",
+          "confidence",
+          "nostalgia",
+          "wonder",
+          "curiosity",
+          "calm",
+          "urgency",
+          "authority"
+        ]
+      }
+    },
+    "motion_type": {
+      "type": "string",
+      "enum": [
+        "transform",
+        "path",
+        "deform",
+        "opacity",
+        "camera",
+        "time",
+        "particle",
+        "typographic",
+        "light",
+        "mask",
+        "audio-driven",
+        "structural"
+      ]
+    },
+    "contexts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "enum": [
+          "short-social",
+          "ad",
+          "logo-brand",
+          "explainer",
+          "documentary",
+          "music-video",
+          "trailer",
+          "institutional",
+          "data-story",
+          "ui-product",
+          "any"
+        ]
+      }
+    },
+    "complexity": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5
+    },
+    "feasibility": {
+      "type": "string",
+      "enum": [
+        "A",
+        "B",
+        "C"
+      ],
+      "description": "A nativo no motion-kit/Canvas · B viável com esforço (SVG/GSAP/Three/FFmpeg) · C ferramenta externa"
+    },
+    "engines": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/definitions/id"
+      },
+      "description": "ids de motores em engines/ que implementam a técnica"
+    },
+    "kit": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "description": "funções do motion-kit (M.*) quando feasibility = A"
+    },
+    "requirements": {
+      "type": "string",
+      "minLength": 1
+    },
+    "when_to_use": {
+      "type": "string",
+      "minLength": 1
+    },
+    "why": {
+      "type": "string",
+      "minLength": 1
+    },
+    "how": {
+      "type": "string"
+    },
+    "risks": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "alternatives": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  }
+}

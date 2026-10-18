@@ -1,0 +1,61 @@
+{
+  "id": "ffmpeg-post",
+  "name": "FFmpeg (montagem, áudio e acabamento)",
+  "version": "1.0.0",
+  "project_types": [
+    "post-production",
+    "concat",
+    "audio-mux",
+    "loudness",
+    "format-conversion",
+    "chroma-key"
+  ],
+  "capabilities": [
+    "audio",
+    "batch-render",
+    "live-action-compose"
+  ],
+  "requirements": {
+    "binaries": [
+      "ffmpeg",
+      "ffprobe"
+    ],
+    "python_modules": [],
+    "node_packages": [],
+    "notes": ""
+  },
+  "inputs": [
+    "vídeos/áudios/imagens existentes"
+  ],
+  "outputs": [
+    "MP4/GIF/WAV",
+    "relatórios ffprobe"
+  ],
+  "limitations": [
+    "não cria animação; opera sobre mídia pronta",
+    "filtros complexos exigem teste caso a caso"
+  ],
+  "render_requirements": "FFmpeg com libx264 e aac",
+  "validation": {
+    "method": "ffprobe da saída (duração, streams, resolução)",
+    "command": "ffprobe -v error -show_streams -show_format <arquivo>"
+  },
+  "availability": {
+    "probes": [
+      {
+        "kind": "binary",
+        "name": "ffmpeg"
+      },
+      {
+        "kind": "binary",
+        "name": "ffprobe"
+      }
+    ]
+  },
+  "verification": {
+    "state": "verified",
+    "evidence": [
+      "tests/test_render_e2e.py"
+    ]
+  }
+}

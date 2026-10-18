@@ -1,0 +1,42 @@
+{
+  "id": "production-engines",
+  "name": "Production Engines",
+  "version": "1.0.0",
+  "kind": "engine-registry",
+  "responsibility": "Registrar motores de produção com contrato (tipos de projeto, requisitos, entradas/saídas, limitações, validação, disponibilidade real) e escolher o motor pelo objetivo e pela viabilidade.",
+  "core_contract": 1,
+  "docs": [
+    "references/engines.md"
+  ],
+  "data": [
+    "engines",
+    "profiles"
+  ],
+  "scripts": [
+    "scripts/engines.py",
+    "scripts/render.py"
+  ],
+  "consumes": [
+    "script",
+    "profile"
+  ],
+  "produces": [
+    "production-plan"
+  ],
+  "depends_on": [],
+  "optional_integrations": [],
+  "known_errors": [
+    "motor sem sondas de disponibilidade é rejeitado",
+    "seleção sem motor disponível devolve erro explicando requisito ausente e alternativas"
+  ],
+  "limitations": [
+    "somente 'canvas-motion-kit' e 'ffmpeg-post' foram executados de ponta a ponta; os demais são descritos, não testados"
+  ],
+  "verification": {
+    "state": "verified",
+    "evidence": [
+      "tests/test_engines.py",
+      "tests/test_render_e2e.py"
+    ]
+  }
+}

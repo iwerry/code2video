@@ -1,0 +1,152 @@
+[
+ {
+  "id": "kinetic-typography-3d",
+  "name": "Tipografia cinética espacial (3D)",
+  "category": "typography",
+  "narrative_intents": [
+   "emphasis",
+   "read-text",
+   "rhythm"
+  ],
+  "emotions": [
+   "enthusiasm",
+   "urgency"
+  ],
+  "motion_type": "typographic",
+  "contexts": [
+   "trailer",
+   "music-video",
+   "ad"
+  ],
+  "complexity": 4,
+  "feasibility": "B",
+  "engines": [
+   "threejs",
+   "canvas-motion-kit"
+  ],
+  "requirements": "Three.js (pacote npm) com captura por screenshot; não testado neste ambiente; versão 2.5D com M.plane em Canvas",
+  "when_to_use": "Para textos que ocupam o espaço e a câmera percorre.",
+  "why": "Texto vira cenário e guia o ritmo.",
+  "risks": [
+   "Legibilidade cai com rotação excessiva",
+   "Três.js: ver risco de performance headless"
+  ],
+  "alternatives": [
+   "Tipografia cinética 2D (kinetic-typography-basic)"
+  ],
+  "kit": [
+   "M.kinetic"
+  ]
+ },
+ {
+  "id": "text-animators-range-selectors",
+  "name": "Animadores de texto e seletores de alcance",
+  "category": "typography",
+  "narrative_intents": [
+   "read-text",
+   "emphasis",
+   "rhythm"
+  ],
+  "emotions": [
+   "enthusiasm",
+   "confidence"
+  ],
+  "motion_type": "typographic",
+  "contexts": [
+   "explainer",
+   "ad",
+   "short-social"
+  ],
+  "complexity": 3,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado)",
+  "when_to_use": "Para revelar texto por caractere/palavra com stagger.",
+  "why": "Controla ritmo de leitura e hierarquia.",
+  "risks": [
+   "Efeito lento demais atrapalha a leitura"
+  ],
+  "alternatives": [
+   "Fade da linha inteira"
+  ],
+  "kit": [
+   "M.kinetic"
+  ]
+ },
+ {
+  "id": "kinetic-typography-basic",
+  "name": "Tipografia cinética básica",
+  "category": "typography",
+  "narrative_intents": [
+   "read-text",
+   "emphasis",
+   "rhythm"
+  ],
+  "emotions": [
+   "enthusiasm",
+   "confidence",
+   "urgency"
+  ],
+  "motion_type": "typographic",
+  "contexts": [
+   "short-social",
+   "explainer",
+   "ad",
+   "music-video"
+  ],
+  "complexity": 3,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado)",
+  "when_to_use": "Para sincronizar palavras com fala/ritmo.",
+  "why": "Reforça a mensagem pelo timing e pelo foco por palavra.",
+  "risks": [
+   "Texto que se move demais é ilegível; ≥0,3 s/palavra"
+  ],
+  "alternatives": [
+   "Texto estático com destaque de cor"
+  ],
+  "kit": [
+   "M.kinetic"
+  ]
+ },
+ {
+  "id": "text-bounce-pop",
+  "name": "Entrada de texto com bounce/pop",
+  "category": "typography",
+  "narrative_intents": [
+   "emphasis"
+  ],
+  "emotions": [
+   "enthusiasm"
+  ],
+  "motion_type": "typographic",
+  "contexts": [
+   "short-social",
+   "ad",
+   "explainer"
+  ],
+  "complexity": 2,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado)",
+  "when_to_use": "Palavras-chave ou títulos curtos.",
+  "why": "Mola dá energia e chama atenção.",
+  "risks": [
+   "Se tudo salta nada se destaca"
+  ],
+  "alternatives": [
+   "Fade com leve slide"
+  ],
+  "kit": [
+   "M.kinetic",
+   "M.E.outBack"
+  ]
+ }
+]

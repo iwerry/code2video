@@ -1,0 +1,41 @@
+{
+  "id": "generative-ai-external",
+  "name": "Geração por IA (imagem, vídeo, áudio) — ferramentas externas",
+  "version": "1.0.0",
+  "project_types": [
+    "ai-video",
+    "ai-image-assets",
+    "ai-audio"
+  ],
+  "capabilities": [
+    "image-to-video",
+    "audio"
+  ],
+  "requirements": {
+    "binaries": [],
+    "python_modules": [],
+    "node_packages": [],
+    "notes": "Disponibilidade depende de conectores/ferramentas do ambiente; não presumir nenhuma."
+  },
+  "inputs": [
+    "shot-spec + prompt-profile da ferramenta"
+  ],
+  "outputs": [
+    "assets (imagem/vídeo/áudio) a compor em Canvas/FFmpeg"
+  ],
+  "limitations": [
+    "capacidades específicas (texto, física, continuidade, movimento de câmera) NÃO verificadas; ver prompt-profiles/"
+  ],
+  "render_requirements": "n/a",
+  "validation": {
+    "method": "inspeção visual dos assets gerados"
+  },
+  "availability": {
+    "probes": []
+  },
+  "verification": {
+    "state": "planned",
+    "evidence": []
+  },
+  "external": true
+}

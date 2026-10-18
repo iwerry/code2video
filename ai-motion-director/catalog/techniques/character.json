@@ -1,0 +1,135 @@
+[
+ {
+  "id": "advanced-character-rigging",
+  "name": "Rigging avançado de personagem (IK/FK)",
+  "category": "character",
+  "narrative_intents": [
+   "life-weight"
+  ],
+  "emotions": [
+   "empathy",
+   "enthusiasm"
+  ],
+  "motion_type": "deform",
+  "contexts": [
+   "trailer",
+   "ad",
+   "explainer"
+  ],
+  "complexity": 5,
+  "feasibility": "C",
+  "engines": [
+   "desktop-dcc-external"
+  ],
+  "requirements": "Ferramenta desktop externa (After Effects, Blender, Cinema 4D ou Houdini); não executa neste ambiente",
+  "when_to_use": "Quando há personagem que atua por muitas cenas e precisa de controle fino.",
+  "why": "Rig reutilizável economiza tempo em séries e permite performance de atuação.",
+  "risks": [
+   "Investimento inicial alto",
+   "Não vale para peça curta de uma só cena"
+  ],
+  "alternatives": [
+   "Personagem por estados em SVG (svg-gsap)",
+   "Squash & stretch em formas simples"
+  ]
+ },
+ {
+  "id": "physics-based-rigging",
+  "name": "Rigging com física (molas e gravidade)",
+  "category": "character",
+  "narrative_intents": [
+   "life-weight"
+  ],
+  "emotions": [
+   "enthusiasm"
+  ],
+  "motion_type": "deform",
+  "contexts": [
+   "trailer",
+   "ad"
+  ],
+  "complexity": 5,
+  "feasibility": "C",
+  "engines": [
+   "desktop-dcc-external"
+  ],
+  "requirements": "Ferramenta desktop externa (After Effects, Blender, Cinema 4D ou Houdini); não executa neste ambiente; movimentos secundários simples via mola em código (secondary-motion-overlap)",
+  "when_to_use": "Para movimento secundário automático em personagens/objetos complexos.",
+  "why": "Dá vida sem animar cada detalhe.",
+  "risks": [
+   "Instável se mal calibrado"
+  ],
+  "alternatives": [
+   "Mola analítica por parte (secondary-motion-overlap)"
+  ]
+ },
+ {
+  "id": "rotoscoping-paint",
+  "name": "Rotoscopia e pintura quadro a quadro",
+  "category": "character",
+  "narrative_intents": [
+   "continuity"
+  ],
+  "emotions": [
+   "enthusiasm",
+   "nostalgia"
+  ],
+  "motion_type": "structural",
+  "contexts": [
+   "music-video",
+   "trailer",
+   "ad"
+  ],
+  "complexity": 4,
+  "feasibility": "C",
+  "engines": [
+   "desktop-dcc-external"
+  ],
+  "requirements": "Ferramenta desktop externa (After Effects, Blender, Cinema 4D ou Houdini); não executa neste ambiente",
+  "when_to_use": "Para isolar elementos de vídeo real ou desenhar sobre ele.",
+  "why": "Estilo artesanal e controle absoluto da silhueta.",
+  "risks": [
+   "Trabalho manual intenso"
+  ],
+  "alternatives": [
+   "Chroma key (chroma-key-cleanup)"
+  ]
+ },
+ {
+  "id": "squash-and-stretch",
+  "name": "Squash and stretch",
+  "category": "character",
+  "narrative_intents": [
+   "life-weight",
+   "impact"
+  ],
+  "emotions": [
+   "enthusiasm",
+   "surprise"
+  ],
+  "motion_type": "deform",
+  "contexts": [
+   "short-social",
+   "ad",
+   "explainer",
+   "logo-brand"
+  ],
+  "complexity": 2,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado)",
+  "when_to_use": "Para impacto, massa e elasticidade em objetos e logos.",
+  "why": "Deformação proporcional comunica velocidade e peso.",
+  "risks": [
+   "Volume não preservado fica estranho"
+  ],
+  "alternatives": [
+   "Escala com overshoot"
+  ],
+  "kit": [
+   "M.spring"
+  ]
+ }
+]

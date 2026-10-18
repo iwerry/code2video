@@ -1,0 +1,52 @@
+{
+  "id": "svg-gsap",
+  "name": "SVG + GSAP (timeline pausada)",
+  "version": "1.0.0",
+  "project_types": [
+    "icon-animation",
+    "infographic",
+    "character-states",
+    "logo-animation"
+  ],
+  "capabilities": [
+    "vector",
+    "2d",
+    "text",
+    "deterministic-seek"
+  ],
+  "requirements": {
+    "binaries": [],
+    "python_modules": [],
+    "node_packages": [
+      "gsap"
+    ],
+    "notes": "Captura via screenshot (render.py --capture jpeg|png); tl.time(t) dentro de window.__seek."
+  },
+  "inputs": [
+    "arquivo .svg/.html com grupos de IDs semânticos"
+  ],
+  "outputs": [
+    "MP4 via render.py",
+    "SVG animado/Lottie (via ferramentas externas)"
+  ],
+  "limitations": [
+    "não testado neste ambiente",
+    "captura por screenshot é mais lenta que a leitura direta de canvas"
+  ],
+  "render_requirements": "render.py --capture jpeg",
+  "validation": {
+    "method": "contagem de frames + inspect_video"
+  },
+  "availability": {
+    "probes": [
+      {
+        "kind": "node_package",
+        "name": "gsap"
+      }
+    ]
+  },
+  "verification": {
+    "state": "implemented-untested",
+    "evidence": []
+  }
+}

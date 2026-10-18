@@ -1,0 +1,37 @@
+[
+ {
+  "id": "speed-ramp-time-remap",
+  "name": "Speed ramp e remapeamento de tempo",
+  "category": "time",
+  "narrative_intents": [
+   "speed-change",
+   "impact"
+  ],
+  "emotions": [
+   "urgency",
+   "surprise"
+  ],
+  "motion_type": "time",
+  "contexts": [
+   "short-social",
+   "music-video",
+   "ad",
+   "trailer"
+  ],
+  "complexity": 3,
+  "feasibility": "B",
+  "engines": [
+   "ffmpeg-post",
+   "canvas-motion-kit"
+  ],
+  "requirements": "FFmpeg (disponível e testado) para vídeo real (setpts); em Canvas aplique ease ao próprio t",
+  "when_to_use": "Para acelerar/desacelerar um momento e dar ênfase.",
+  "why": "Manipula percepção do tempo e destaca o ponto de virada.",
+  "risks": [
+   "Em animação por Canvas, sub-frames exigem --blur para suavizar"
+  ],
+  "alternatives": [
+   "Corte rápido"
+  ]
+ }
+]

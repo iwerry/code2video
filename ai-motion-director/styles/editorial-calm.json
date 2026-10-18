@@ -1,0 +1,22 @@
+{
+  "id": "editorial-calm",
+  "name": "Editorial calmo e humano",
+  "palette": {
+    "bg": "#f3efe6",
+    "ink": "#1d1b18",
+    "accent": "#c2410c",
+    "dim": "#8a8378"
+  },
+  "easing": [
+    "inOutCubic",
+    "outCubic"
+  ],
+  "tempo": "respirado, pausas de 0,8-1,2 s",
+  "motion_language": "parallax suave, traço manual, textura e grão, movimento orgânico de baixa amplitude",
+  "sound": "ambiência e piano esparso, silêncios longos",
+  "avoid": [
+    "shake",
+    "whip pans",
+    "cores saturadas"
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Envelope de delegação entre skills/agentes (interoperabilidade sem chamada nativa)",
+  "type": "object",
+  "required": [
+    "from",
+    "to",
+    "task",
+    "inputs",
+    "expected_output",
+    "status"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "from": {
+      "type": "string",
+      "minLength": 1
+    },
+    "to": {
+      "type": "string",
+      "minLength": 1
+    },
+    "task": {
+      "type": "string",
+      "minLength": 1
+    },
+    "inputs": {
+      "type": "object"
+    },
+    "expected_output": {
+      "type": "object",
+      "required": [
+        "contract"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "contract": {
+          "type": "string",
+          "minLength": 1
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "fallback": {
+      "type": "string",
+      "description": "o que o Motion Director faz se a skill de destino não estiver disponível"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "requested",
+        "received",
+        "unavailable"
+      ]
+    },
+    "result": {
+      "type": "object"
+    }
+  }
+}

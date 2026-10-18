@@ -1,0 +1,44 @@
+{
+  "id": "motion-graphics-intelligence",
+  "name": "Motion Graphics Intelligence",
+  "version": "1.0.0",
+  "kind": "data",
+  "responsibility": "Selecionar técnicas de motion pela função narrativa. Mantém o catálogo pesquisável (catalog/techniques/*.json) e o guia de decisão intenção→técnica.",
+  "core_contract": 1,
+  "docs": [
+    "references/motion-catalog.md"
+  ],
+  "data": [
+    "catalog/techniques"
+  ],
+  "scripts": [
+    "scripts/catalog.py"
+  ],
+  "consumes": [
+    "creative-brief",
+    "script"
+  ],
+  "produces": [
+    "technique-recommendation"
+  ],
+  "depends_on": [],
+  "optional_integrations": [
+    {
+      "skill": "frontend-design",
+      "purpose": "direção tipográfica e estética para vídeos com muita composição gráfica",
+      "fallback": "usar styles/*.json e references/motion-catalog.md"
+    }
+  ],
+  "known_errors": [
+    "técnica com campo inválido ou id duplicado é rejeitada por 'catalog.py check'"
+  ],
+  "limitations": [
+    "classificação de viabilidade (A/B/C) reflete o ambiente de referência: Canvas + Playwright + FFmpeg"
+  ],
+  "verification": {
+    "state": "verified",
+    "evidence": [
+      "tests/test_catalog.py"
+    ]
+  }
+}

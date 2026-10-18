@@ -1,0 +1,318 @@
+[
+ {
+  "id": "luma-alpha-matte-transitions",
+  "name": "Transições por luma matte / canal alfa",
+  "category": "transition",
+  "narrative_intents": [
+   "reveal",
+   "transformation"
+  ],
+  "emotions": [
+   "wonder",
+   "surprise"
+  ],
+  "motion_type": "mask",
+  "contexts": [
+   "trailer",
+   "ad",
+   "logo-brand"
+  ],
+  "complexity": 4,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado) (clip e globalCompositeOperation)",
+  "when_to_use": "Para revelar cena nova por forma/gradiente orgânico em vez de corte.",
+  "why": "O formato da máscara conta uma história (ex.: o logo vira janela).",
+  "risks": [
+   "Máscara arbitrária parece truque"
+  ],
+  "alternatives": [
+   "Wipe ou iris (iris-wipe-transition)"
+  ],
+  "kit": [
+   "M.reveal"
+  ]
+ },
+ {
+  "id": "track-matte-reveal",
+  "name": "Revelação por máscara (track matte)",
+  "category": "transition",
+  "narrative_intents": [
+   "reveal"
+  ],
+  "emotions": [
+   "curiosity",
+   "surprise"
+  ],
+  "motion_type": "mask",
+  "contexts": [
+   "any"
+  ],
+  "complexity": 3,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado)",
+  "when_to_use": "Para texto/imagem que 'nasce' de dentro de uma forma ou linha.",
+  "why": "Controla o que se vê e quando, criando suspense.",
+  "risks": [
+   "Muitas máscaras empilhadas poluem"
+  ],
+  "alternatives": [
+   "Fade ou slide simples (opacity-fade)"
+  ],
+  "kit": [
+   "M.reveal"
+  ]
+ },
+ {
+  "id": "custom-vector-transitions",
+  "name": "Transições vetoriais customizadas",
+  "category": "transition",
+  "narrative_intents": [
+   "speed-change",
+   "guide-between-ideas"
+  ],
+  "emotions": [
+   "enthusiasm",
+   "urgency"
+  ],
+  "motion_type": "transform",
+  "contexts": [
+   "any"
+  ],
+  "complexity": 3,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado)",
+  "when_to_use": "Para trocar de cena com identidade gráfica da marca.",
+  "why": "Forma e movimento da transição reforçam a marca.",
+  "risks": [
+   "Duração longa quebra o ritmo"
+  ],
+  "alternatives": [
+   "Corte seco"
+  ],
+  "kit": [
+   "M.T.whip",
+   "M.T.wipe",
+   "M.T.iris"
+  ]
+ },
+ {
+  "id": "layer-masking-basic",
+  "name": "Máscaras de camada básicas",
+  "category": "transition",
+  "narrative_intents": [
+   "reveal"
+  ],
+  "emotions": [
+   "curiosity"
+  ],
+  "motion_type": "mask",
+  "contexts": [
+   "any"
+  ],
+  "complexity": 1,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado)",
+  "when_to_use": "Para recortar ou revelar por formas simples.",
+  "why": "Controle de visibilidade com custo mínimo.",
+  "risks": [
+   "Bordas duras sem suavização"
+  ],
+  "alternatives": [
+   "Fade"
+  ],
+  "kit": [
+   "M.reveal"
+  ]
+ },
+ {
+  "id": "linear-slide-transitions",
+  "name": "Transições por deslize",
+  "category": "transition",
+  "narrative_intents": [
+   "guide-between-ideas"
+  ],
+  "emotions": [
+   "calm",
+   "confidence"
+  ],
+  "motion_type": "transform",
+  "contexts": [
+   "any"
+  ],
+  "complexity": 1,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado)",
+  "when_to_use": "Troca de cena simples com direção de leitura.",
+  "why": "Clareza e velocidade.",
+  "risks": [
+   "Previsível demais se for a única"
+  ],
+  "alternatives": [
+   "Whip pan (whip-pan)"
+  ],
+  "kit": [
+   "M.T.wipe"
+  ]
+ },
+ {
+  "id": "bumper-stinger",
+  "name": "Vinhetas e stingers",
+  "category": "transition",
+  "narrative_intents": [
+   "brand",
+   "rhythm"
+  ],
+  "emotions": [
+   "enthusiasm",
+   "authority"
+  ],
+  "motion_type": "structural",
+  "contexts": [
+   "logo-brand",
+   "ad",
+   "short-social"
+  ],
+  "complexity": 2,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado)",
+  "when_to_use": "Para abrir/fechar blocos com identidade.",
+  "why": "Marca ritmo e reconhecimento.",
+  "risks": [
+   "Longo demais irrita em séries"
+  ],
+  "alternatives": [
+   "Corte seco com logo"
+  ],
+  "kit": [
+   "M.T"
+  ]
+ },
+ {
+  "id": "match-cut",
+  "name": "Match cut",
+  "category": "transition",
+  "narrative_intents": [
+   "continuity",
+   "transformation",
+   "guide-between-ideas"
+  ],
+  "emotions": [
+   "surprise",
+   "wonder",
+   "curiosity"
+  ],
+  "motion_type": "structural",
+  "contexts": [
+   "trailer",
+   "ad",
+   "short-social",
+   "documentary"
+  ],
+  "complexity": 3,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit",
+   "ffmpeg-post"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado)",
+  "when_to_use": "Quando duas ideias compartilham forma, posição ou movimento.",
+  "why": "A continuidade visual faz o espectador sentir a ligação conceitual.",
+  "risks": [
+   "Exige planejar posição/escala/forma no fim e no começo"
+  ],
+  "alternatives": [
+   "Corte seco",
+   "Whip pan (whip-pan)"
+  ],
+  "kit": [
+   "M.morph"
+  ]
+ },
+ {
+  "id": "whip-pan",
+  "name": "Whip pan",
+  "category": "transition",
+  "narrative_intents": [
+   "speed-change"
+  ],
+  "emotions": [
+   "enthusiasm",
+   "urgency"
+  ],
+  "motion_type": "camera",
+  "contexts": [
+   "short-social",
+   "ad",
+   "music-video"
+  ],
+  "complexity": 2,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado) (+ --blur para borrão)",
+  "when_to_use": "Para ligar cenas com energia e velocidade.",
+  "why": "Movimento contínuo disfarça o corte.",
+  "risks": [
+   "Sem borrão parece slide"
+  ],
+  "alternatives": [
+   "Wipe"
+  ],
+  "kit": [
+   "M.T.whip"
+  ]
+ },
+ {
+  "id": "iris-wipe-transition",
+  "name": "Transição íris / foco no objeto",
+  "category": "transition",
+  "narrative_intents": [
+   "guide-between-ideas",
+   "reveal"
+  ],
+  "emotions": [
+   "curiosity",
+   "wonder"
+  ],
+  "motion_type": "mask",
+  "contexts": [
+   "any"
+  ],
+  "complexity": 2,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado)",
+  "when_to_use": "Quando a próxima cena nasce de um objeto da atual.",
+  "why": "Transição motivada pela narrativa.",
+  "risks": [
+   "Íris lenta demais pesa o ritmo"
+  ],
+  "alternatives": [
+   "Fade"
+  ],
+  "kit": [
+   "M.T.iris"
+  ]
+ }
+]

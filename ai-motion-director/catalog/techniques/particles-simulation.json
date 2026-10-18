@@ -1,0 +1,191 @@
+[
+ {
+  "id": "procedural-geometry-nodes",
+  "name": "Animação procedural com nós de geometria",
+  "category": "particles-simulation",
+  "narrative_intents": [
+   "transformation",
+   "order-from-chaos"
+  ],
+  "emotions": [
+   "wonder",
+   "curiosity"
+  ],
+  "motion_type": "structural",
+  "contexts": [
+   "music-video",
+   "trailer",
+   "ad"
+  ],
+  "complexity": 5,
+  "feasibility": "B",
+  "engines": [
+   "threejs",
+   "desktop-dcc-external"
+  ],
+  "requirements": "Three.js (pacote npm) com captura por screenshot; não testado neste ambiente",
+  "when_to_use": "Para sistemas abstratos ou arquitetura que cresce por regras matemáticas.",
+  "why": "Resultados impossíveis de animar à mão e variáveis por parâmetros.",
+  "risks": [
+   "Curva de aprendizado alta",
+   "WebGL em modo headless pode ser lento"
+  ],
+  "alternatives": [
+   "Partículas determinísticas em Canvas (particle-systems)"
+  ]
+ },
+ {
+  "id": "fluid-dynamic-simulation",
+  "name": "Simulação de fluidos, fumaça e fogo",
+  "category": "particles-simulation",
+  "narrative_intents": [
+   "transformation",
+   "emphasis",
+   "impact"
+  ],
+  "emotions": [
+   "wonder",
+   "tension"
+  ],
+  "motion_type": "particle",
+  "contexts": [
+   "trailer",
+   "ad",
+   "music-video"
+  ],
+  "complexity": 5,
+  "feasibility": "C",
+  "engines": [
+   "desktop-dcc-external",
+   "threejs"
+  ],
+  "requirements": "Ferramenta desktop externa (After Effects, Blender, Cinema 4D ou Houdini); não executa neste ambiente",
+  "when_to_use": "Quando matéria orgânica (fumaça, líquido, fogo) interage com tipografia ou logo.",
+  "why": "Organicidade e escala que formas vetoriais não alcançam.",
+  "risks": [
+   "Render pesado",
+   "Difícil de controlar a direção artística"
+  ],
+  "alternatives": [
+   "Ruído/advecção 2D simples em shader",
+   "Partículas com blur e glow (particle-systems + glow-light-rays)"
+  ]
+ },
+ {
+  "id": "rigid-body-cloth-dynamics",
+  "name": "Corpos rígidos, tecido e destruição",
+  "category": "particles-simulation",
+  "narrative_intents": [
+   "impact",
+   "life-weight"
+  ],
+  "emotions": [
+   "surprise",
+   "tension"
+  ],
+  "motion_type": "particle",
+  "contexts": [
+   "trailer",
+   "ad"
+  ],
+  "complexity": 5,
+  "feasibility": "C",
+  "engines": [
+   "desktop-dcc-external"
+  ],
+  "requirements": "Ferramenta desktop externa (After Effects, Blender, Cinema 4D ou Houdini); não executa neste ambiente",
+  "when_to_use": "Para quebra, colisão ou tecido realistas ligados ao impacto narrativo.",
+  "why": "Física verossímil comunica peso e consequência.",
+  "risks": [
+   "Simulação cara e difícil de iterar"
+  ],
+  "alternatives": [
+   "Shake + flash + fragmentos 2D determinísticos (impact-shake-flash)"
+  ]
+ },
+ {
+  "id": "particle-systems",
+  "name": "Sistemas de partículas",
+  "category": "particles-simulation",
+  "narrative_intents": [
+   "order-from-chaos",
+   "tension",
+   "transformation",
+   "impact"
+  ],
+  "emotions": [
+   "tension",
+   "wonder",
+   "enthusiasm"
+  ],
+  "motion_type": "particle",
+  "contexts": [
+   "logo-brand",
+   "short-social",
+   "music-video",
+   "trailer",
+   "ad",
+   "any"
+  ],
+  "complexity": 3,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit",
+   "threejs"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado)",
+  "when_to_use": "Quando a mensagem é sobre caos→ordem, energia, formação de marca ou explosão.",
+  "why": "Posição = f(semente, t): determinístico, dá scrub e renderiza sem simulação passo a passo.",
+  "risks": [
+   "Sem semente fixa o render não repete",
+   "Milhares de partículas com shadowBlur ficam lentos"
+  ],
+  "alternatives": [
+   "Poucos pontos com stagger",
+   "Corte seco para a marca"
+  ],
+  "kit": [
+   "M.particles",
+   "M.rng",
+   "M.wiggle",
+   "E.outExpo"
+  ]
+ },
+ {
+  "id": "mograph-cloners-effectors",
+  "name": "Cloners e effectors",
+  "category": "particles-simulation",
+  "narrative_intents": [
+   "rhythm",
+   "order-from-chaos"
+  ],
+  "emotions": [
+   "enthusiasm",
+   "wonder"
+  ],
+  "motion_type": "structural",
+  "contexts": [
+   "music-video",
+   "ad",
+   "logo-brand"
+  ],
+  "complexity": 3,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado) (laço com offsets por índice)",
+  "when_to_use": "Para padrões repetidos com variação (grades, ondas).",
+  "why": "Repetição com variação é ritmo visual.",
+  "risks": [
+   "Uniformidade demais é entediante"
+  ],
+  "alternatives": [
+   "Poucos elementos com stagger"
+  ],
+  "kit": [
+   "M.E",
+   "M.prog"
+  ]
+ }
+]

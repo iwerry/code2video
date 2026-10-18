@@ -1,0 +1,32 @@
+{
+  "status": "recommended",
+  "items": [
+    {
+      "technique_id": "counter-number-roll",
+      "narrative_goal": "dar peso ao número",
+      "expected_effect": "o olho acompanha a subida; o final carrega o impacto",
+      "moment": "0-3,4 s",
+      "justification": "a mensagem é o número",
+      "simpler_alternative": "número estático em escala grande",
+      "risks": [
+        "largura variável: ancorar à esquerda"
+      ]
+    },
+    {
+      "technique_id": "impact-shake-flash",
+      "narrative_goal": "soco no estômago",
+      "expected_effect": "impacto sentido no corpo",
+      "moment": "3,4 s",
+      "justification": "preparado por tensão e 150 ms de silêncio",
+      "simpler_alternative": "escala rápida com overshoot"
+    },
+    {
+      "technique_id": "dramatic-pause",
+      "narrative_goal": "ampliar o impacto seguinte",
+      "expected_effect": "vazio antes do estalo",
+      "moment": "3,25-3,4 s",
+      "justification": "contraste cria impacto",
+      "simpler_alternative": "corte sem pausa"
+    }
+  ]
+}

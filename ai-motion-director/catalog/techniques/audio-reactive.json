@@ -1,0 +1,37 @@
+[
+ {
+  "id": "audio-spectrum-waveform",
+  "name": "Espectro e forma de onda reativos",
+  "category": "audio-reactive",
+  "narrative_intents": [
+   "rhythm"
+  ],
+  "emotions": [
+   "enthusiasm",
+   "tension"
+  ],
+  "motion_type": "audio-driven",
+  "contexts": [
+   "music-video",
+   "short-social",
+   "ad"
+  ],
+  "complexity": 3,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado) + scripts/audio_map.py (dados reais)",
+  "when_to_use": "Quando a música/voz é protagonista.",
+  "why": "Mostra o som: vincula imagem ao áudio de forma legível.",
+  "risks": [
+   "Reagir a tudo cansa; destaque os tempos fortes"
+  ],
+  "alternatives": [
+   "Pulso único nos onsets principais"
+  ],
+  "kit": [
+   "M.E"
+  ]
+ }
+]

@@ -1,0 +1,464 @@
+[
+ {
+  "id": "expression-driven-animation",
+  "name": "Animação por expressões e scripts",
+  "category": "foundations",
+  "narrative_intents": [
+   "rhythm",
+   "continuity"
+  ],
+  "emotions": [
+   "confidence",
+   "curiosity"
+  ],
+  "motion_type": "structural",
+  "contexts": [
+   "any"
+  ],
+  "complexity": 3,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado)",
+  "when_to_use": "Sempre que o movimento é matemático, repetitivo ou dirigido por dados.",
+  "why": "Tudo vira função de t: reutilizável, parametrizável e fácil de sincronizar com áudio.",
+  "risks": [
+   "Over-engineering quando um keyframe resolve"
+  ],
+  "alternatives": [
+   "Keyframes manuais"
+  ],
+  "kit": [
+   "M.E",
+   "M.spring",
+   "M.wiggle",
+   "M.prog"
+  ]
+ },
+ {
+  "id": "secondary-motion-overlap",
+  "name": "Movimento secundário e ação sobreposta",
+  "category": "foundations",
+  "narrative_intents": [
+   "life-weight"
+  ],
+  "emotions": [
+   "empathy",
+   "enthusiasm"
+  ],
+  "motion_type": "transform",
+  "contexts": [
+   "any"
+  ],
+  "complexity": 3,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado)",
+  "when_to_use": "Em qualquer elemento com partes ou massa (antena, cabelo, texto em cascata).",
+  "why": "Defasar partes e deixar o fim 'chegar depois' dá peso e naturalidade.",
+  "risks": [
+   "Defasagem demais parece quebrado"
+  ],
+  "alternatives": [
+   "Movimento rígido com ease forte"
+  ],
+  "kit": [
+   "M.spring"
+  ]
+ },
+ {
+  "id": "seamless-loop",
+  "name": "Loops sem emenda",
+  "category": "foundations",
+  "narrative_intents": [
+   "closure",
+   "rhythm"
+  ],
+  "emotions": [
+   "calm",
+   "curiosity"
+  ],
+  "motion_type": "structural",
+  "contexts": [
+   "short-social",
+   "logo-brand",
+   "ui-product"
+  ],
+  "complexity": 3,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado); periódicas com períodos que dividem a duração",
+  "when_to_use": "Quando o vídeo vai repetir (redes, telas, GIF).",
+  "why": "Final = começo, estimula rever e não mostra costura.",
+  "risks": [
+   "Loop que não reencaixa vira falha visível"
+  ],
+  "alternatives": [
+   "Final com fade e CTA"
+  ],
+  "kit": [
+   "M.E.linear"
+  ]
+ },
+ {
+  "id": "easing-graph-editor",
+  "name": "Easing e ajuste de curvas",
+  "category": "foundations",
+  "narrative_intents": [
+   "emphasis"
+  ],
+  "emotions": [
+   "confidence"
+  ],
+  "motion_type": "transform",
+  "contexts": [
+   "any"
+  ],
+  "complexity": 2,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado)",
+  "when_to_use": "Em todo movimento: o easing define a personalidade.",
+  "why": "Curvas de velocidade fazem o movimento parecer físico ou mecânico.",
+  "risks": [
+   "Ease padrão em tudo faz tudo igual"
+  ],
+  "alternatives": [
+   "Linear (só máquinas/loops)"
+  ],
+  "kit": [
+   "M.E",
+   "M.E.bezier"
+  ]
+ },
+ {
+  "id": "anticipation-follow-through",
+  "name": "Antecipação e follow-through",
+  "category": "foundations",
+  "narrative_intents": [
+   "impact",
+   "emphasis"
+  ],
+  "emotions": [
+   "surprise",
+   "enthusiasm"
+  ],
+  "motion_type": "transform",
+  "contexts": [
+   "any"
+  ],
+  "complexity": 2,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado)",
+  "when_to_use": "Antes de golpes/saltos e depois de paradas bruscas.",
+  "why": "Prepara o olho e dá crédito ao movimento principal.",
+  "risks": [
+   "Antecipação longa demais atrasa"
+  ],
+  "alternatives": [
+   "Movimento direto"
+  ],
+  "kit": [
+   "M.E.inBack",
+   "M.spring"
+  ]
+ },
+ {
+  "id": "parenting-null-control",
+  "name": "Hierarquia e objetos nulos",
+  "category": "foundations",
+  "narrative_intents": [
+   "continuity"
+  ],
+  "emotions": [
+   "confidence"
+  ],
+  "motion_type": "structural",
+  "contexts": [
+   "any"
+  ],
+  "complexity": 2,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado) (g.save/translate/rotate hierárquico)",
+  "when_to_use": "Para mover grupos complexos com um controle.",
+  "why": "Simplifica coreografias combinadas.",
+  "risks": [
+   "Hierarquias profundas confundem"
+  ],
+  "alternatives": [
+   "Animar cada elemento"
+  ]
+ },
+ {
+  "id": "keyframing-linear",
+  "name": "Keyframes lineares",
+  "category": "foundations",
+  "narrative_intents": [
+   "process"
+  ],
+  "emotions": [
+   "calm",
+   "confidence"
+  ],
+  "motion_type": "transform",
+  "contexts": [
+   "any"
+  ],
+  "complexity": 1,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado)",
+  "when_to_use": "Movimentos mecânicos, barras de progresso, rotações constantes.",
+  "why": "Base de toda animação.",
+  "risks": [
+   "Linear em objetos vivos parece robótico"
+  ],
+  "alternatives": [
+   "Ease"
+  ],
+  "kit": [
+   "M.lerp",
+   "M.prog"
+  ]
+ },
+ {
+  "id": "transform-animation",
+  "name": "Posição, escala e rotação",
+  "category": "foundations",
+  "narrative_intents": [
+   "emphasis"
+  ],
+  "emotions": [
+   "confidence"
+  ],
+  "motion_type": "transform",
+  "contexts": [
+   "any"
+  ],
+  "complexity": 1,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado)",
+  "when_to_use": "Em quase tudo.",
+  "why": "Propriedades fundamentais de qualquer elemento.",
+  "risks": [
+   "Combinar tudo ao mesmo tempo gera confusão"
+  ],
+  "alternatives": [
+   "Animar uma propriedade por vez"
+  ],
+  "kit": [
+   "M.lerp",
+   "M.E"
+  ]
+ },
+ {
+  "id": "opacity-fade",
+  "name": "Fade in/out",
+  "category": "foundations",
+  "narrative_intents": [
+   "closure",
+   "pause"
+  ],
+  "emotions": [
+   "calm",
+   "empathy"
+  ],
+  "motion_type": "opacity",
+  "contexts": [
+   "any"
+  ],
+  "complexity": 1,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado)",
+  "when_to_use": "Fecho, respiro, entrada discreta.",
+  "why": "Transição mais neutra possível.",
+  "risks": [
+   "Fade longo demais parece hesitação"
+  ],
+  "alternatives": [
+   "Corte seco"
+  ],
+  "kit": [
+   "M.prog"
+  ]
+ },
+ {
+  "id": "anchor-point",
+  "name": "Ajuste do ponto de ancoragem",
+  "category": "foundations",
+  "narrative_intents": [
+   "emphasis"
+  ],
+  "emotions": [
+   "confidence"
+  ],
+  "motion_type": "transform",
+  "contexts": [
+   "any"
+  ],
+  "complexity": 1,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado) (g.translate antes de rotate/scale)",
+  "when_to_use": "Sempre que rotaciona/escala algo fora do centro.",
+  "why": "Define o comportamento físico da rotação.",
+  "risks": [
+   "Esquecer gera movimentos 'errados'"
+  ],
+  "alternatives": [
+   "Reposicionar o elemento"
+  ]
+ },
+ {
+  "id": "wiggle-noise",
+  "name": "Wiggle e ruído",
+  "category": "foundations",
+  "narrative_intents": [
+   "life-weight",
+   "tension"
+  ],
+  "emotions": [
+   "tension",
+   "calm"
+  ],
+  "motion_type": "transform",
+  "contexts": [
+   "any"
+  ],
+  "complexity": 2,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado)",
+  "when_to_use": "Para vida mínima, tremor ou instabilidade.",
+  "why": "Movimento orgânico barato.",
+  "risks": [
+   "Amplitude alta vira ruído"
+  ],
+  "alternatives": [
+   "Respiração com seno"
+  ],
+  "kit": [
+   "M.wiggle",
+   "M.noise1"
+  ]
+ },
+ {
+  "id": "looping-backgrounds",
+  "name": "Fundos em loop",
+  "category": "foundations",
+  "narrative_intents": [
+   "continuity"
+  ],
+  "emotions": [
+   "calm"
+  ],
+  "motion_type": "structural",
+  "contexts": [
+   "any"
+  ],
+  "complexity": 2,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado)",
+  "when_to_use": "Para dar vida contínua a cenas longas.",
+  "why": "Evita tela estática.",
+  "risks": [
+   "Padrão repetitivo evidente"
+  ],
+  "alternatives": [
+   "Fundo estático com grão"
+  ],
+  "kit": [
+   "M.E.linear"
+  ]
+ },
+ {
+  "id": "precomp-grouping",
+  "name": "Pré-composição e agrupamento",
+  "category": "foundations",
+  "narrative_intents": [
+   "continuity"
+  ],
+  "emotions": [
+   "confidence"
+  ],
+  "motion_type": "structural",
+  "contexts": [
+   "any"
+  ],
+  "complexity": 1,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado) (funções por cena/grupo)",
+  "when_to_use": "Para organizar projetos.",
+  "why": "Manutenção e reuso.",
+  "risks": [
+   "Abstração demais"
+  ],
+  "alternatives": [
+   "Código linear"
+  ]
+ },
+ {
+  "id": "dramatic-pause",
+  "name": "Pausa dramática",
+  "category": "foundations",
+  "narrative_intents": [
+   "pause",
+   "impact",
+   "reveal"
+  ],
+  "emotions": [
+   "tension",
+   "surprise",
+   "empathy"
+  ],
+  "motion_type": "structural",
+  "contexts": [
+   "any"
+  ],
+  "complexity": 1,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado) + corte de áudio",
+  "when_to_use": "Antes de um impacto ou frase-chave.",
+  "why": "O vazio amplifica o momento seguinte.",
+  "risks": [
+   "Pausa longa sem motivo parece erro"
+  ],
+  "alternatives": [
+   "Redução de movimento sem silêncio total"
+  ]
+ }
+]

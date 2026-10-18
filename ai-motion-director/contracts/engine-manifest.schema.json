@@ -1,0 +1,193 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Manifesto de motor de produção",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "version",
+    "project_types",
+    "capabilities",
+    "requirements",
+    "inputs",
+    "outputs",
+    "limitations",
+    "validation",
+    "availability",
+    "verification"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "$ref": "common.schema.json#/definitions/id"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "$ref": "common.schema.json#/definitions/semver"
+    },
+    "project_types": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "2d",
+          "3d",
+          "vector",
+          "text",
+          "particles",
+          "data-viz",
+          "deterministic-seek",
+          "audio",
+          "live-action-compose",
+          "math",
+          "batch-render",
+          "image-to-video"
+        ]
+      }
+    },
+    "requirements": {
+      "type": "object",
+      "required": [
+        "binaries",
+        "python_modules",
+        "node_packages"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "binaries": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "python_modules": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "node_packages": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "render_requirements": {
+      "type": "string"
+    },
+    "validation": {
+      "type": "object",
+      "required": [
+        "method"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "method": {
+          "type": "string",
+          "minLength": 1
+        },
+        "command": {
+          "type": "string"
+        }
+      }
+    },
+    "availability": {
+      "type": "object",
+      "required": [
+        "probes"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "probes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "kind",
+              "name"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "binary",
+                  "python_module",
+                  "node_package",
+                  "file",
+                  "playwright_chromium"
+                ]
+              },
+              "name": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "verification": {
+      "type": "object",
+      "required": [
+        "state"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "state": {
+          "$ref": "common.schema.json#/definitions/verification_state"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "external": {
+      "type": "boolean",
+      "description": "true = roda fora do agente (ex.: After Effects); o motor só gera plano/instruções"
+    }
+  }
+}

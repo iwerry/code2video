@@ -1,0 +1,84 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Plano de produção (saída do Production Engines)",
+  "type": "object",
+  "required": [
+    "engine",
+    "profile",
+    "steps",
+    "status"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "engine": {
+      "type": "object",
+      "required": [
+        "id",
+        "reason"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "common.schema.json#/definitions/id"
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "fallback": {
+          "$ref": "common.schema.json#/definitions/id"
+        }
+      }
+    },
+    "profile": {
+      "$ref": "common.schema.json#/definitions/id"
+    },
+    "style": {
+      "$ref": "common.schema.json#/definitions/id"
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "steps": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "action"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "action": {
+            "type": "string",
+            "minLength": 1
+          },
+          "command": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "common.schema.json#/definitions/status"
+          },
+          "evidence": {
+            "$ref": "common.schema.json#/definitions/evidence"
+          }
+        }
+      }
+    },
+    "status": {
+      "$ref": "common.schema.json#/definitions/status"
+    },
+    "evidence": {
+      "$ref": "common.schema.json#/definitions/evidence"
+    }
+  }
+}

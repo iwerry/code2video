@@ -1,0 +1,101 @@
+{
+  "title": "Lumen — logo reveal",
+  "format": "16:9",
+  "fps": 24,
+  "duration_s": 6.4,
+  "status": "generated",
+  "scenes": [
+    {
+      "name": "faisca",
+      "start_s": 0,
+      "end_s": 1.5,
+      "narrative_goal": "criar expectativa",
+      "emotion": "tensão",
+      "visual": "ponto de luz respira; partículas sugadas",
+      "techniques": [
+        "particle-systems"
+      ],
+      "cues": [
+        {
+          "t": 0,
+          "type": "drone"
+        },
+        {
+          "t": 0.2,
+          "type": "riser",
+          "note": "dur 1.3"
+        }
+      ]
+    },
+    {
+      "name": "estalo",
+      "start_s": 1.5,
+      "end_s": 1.6,
+      "narrative_goal": "virada",
+      "emotion": "surpresa",
+      "visual": "estalo, onda de choque, shake leve",
+      "techniques": [
+        "impact-shake-flash"
+      ],
+      "cues": [
+        {
+          "t": 1.5,
+          "type": "impact"
+        }
+      ]
+    },
+    {
+      "name": "marca",
+      "start_s": 1.6,
+      "end_s": 2.75,
+      "narrative_goal": "nascer a marca",
+      "emotion": "admiração",
+      "visual": "anel se desenha (trim); núcleo nasce com mola",
+      "techniques": [
+        "trim-paths",
+        "secondary-motion-overlap"
+      ],
+      "cues": [
+        {
+          "t": 1.7,
+          "type": "shimmer"
+        }
+      ]
+    },
+    {
+      "name": "nome",
+      "start_s": 2.75,
+      "end_s": 4.7,
+      "narrative_goal": "revelar o nome",
+      "emotion": "confiança",
+      "visual": "feixe varre; letras acendem quentes e esfriam",
+      "techniques": [
+        "glow-light-rays"
+      ],
+      "cues": [
+        {
+          "t": 2.75,
+          "type": "whoosh"
+        }
+      ]
+    },
+    {
+      "name": "respiro",
+      "start_s": 4.7,
+      "end_s": 6.4,
+      "narrative_goal": "fixar e fechar",
+      "emotion": "calma",
+      "visual": "brilho de passagem; fade para preto",
+      "techniques": [
+        "opacity-fade",
+        "vignette-borders"
+      ],
+      "cues": [
+        {
+          "t": 4.7,
+          "type": "shimmer"
+        }
+      ]
+    }
+  ]
+}

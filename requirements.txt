@@ -1,0 +1,7 @@
+# Dependências Python do motor padrão (canvas-motion-kit) e da inspeção/áudio.
+# Os scripts de arquitetura (registry, contracts, catalog, engines, prompt_build) usam só a biblioteca padrão.
+numpy
+pillow
+playwright
+# Depois de instalar o playwright, é preciso haver um Chromium: `python -m playwright install chromium`
+# (ou aponte CHROMIUM_PATH para um executável existente). Também é preciso ffmpeg/ffprobe no PATH.

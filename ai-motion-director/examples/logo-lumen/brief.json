@@ -1,0 +1,34 @@
+{
+  "objective": "vinheta de abertura/encerramento que apresente a marca com impacto",
+  "audience": "clientes e público de redes",
+  "message": "Lumen: a luz que nasce do escuro e revela.",
+  "emotion": {
+    "from": "expectativa",
+    "to": "confiança e admiração"
+  },
+  "platform": "vinheta geral",
+  "format": "16:9",
+  "duration_s": 6.4,
+  "narrative_strategy": "uma faísca é puxada para si mesma, estoura, vira a marca; um feixe acende o nome letra a letra",
+  "visual_direction": "fundo escuro, luz âmbar quente, traços finos, grão discreto",
+  "sound_direction": "drone + riser; silêncio ~0,1 s antes do impacto; shimmer; whoosh",
+  "differentiator": "a metáfora vem do significado do nome (lumen = luz)",
+  "constraints": [
+    "sem logo nem identidade fornecidos: lockup provisório"
+  ],
+  "success_criteria": [
+    "a marca fica legível por ≥1 s",
+    "primeiro quadro não está vazio",
+    "impacto sonoro e visual no mesmo timecode"
+  ],
+  "assumptions": [
+    "lockup provisório (anel + palavra LUMEN)",
+    "6,4 s",
+    "som ligado",
+    "uso como vinheta"
+  ],
+  "open_questions": [
+    "existe logo oficial?"
+  ],
+  "status": "planned"
+}

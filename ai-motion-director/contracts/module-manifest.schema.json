@@ -1,0 +1,152 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Manifesto de módulo",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "version",
+    "kind",
+    "responsibility",
+    "core_contract",
+    "docs",
+    "consumes",
+    "produces",
+    "depends_on",
+    "verification"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "$ref": "common.schema.json#/definitions/id"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "$ref": "common.schema.json#/definitions/semver"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "knowledge",
+        "data",
+        "automation",
+        "qa",
+        "engine-registry"
+      ]
+    },
+    "responsibility": {
+      "type": "string",
+      "minLength": 1
+    },
+    "core_contract": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "versão do contrato do Core com a qual o módulo é compatível"
+    },
+    "docs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "scripts": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "consumes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "description": "contratos (schemas) que o módulo recebe"
+    },
+    "produces": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "description": "contratos (schemas) que o módulo devolve"
+    },
+    "depends_on": {
+      "type": "array",
+      "items": {
+        "$ref": "common.schema.json#/definitions/id"
+      }
+    },
+    "optional_integrations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "skill",
+          "purpose",
+          "fallback"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "skill": {
+            "type": "string",
+            "minLength": 1
+          },
+          "purpose": {
+            "type": "string",
+            "minLength": 1
+          },
+          "fallback": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "known_errors": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "verification": {
+      "type": "object",
+      "required": [
+        "state"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "state": {
+          "$ref": "common.schema.json#/definitions/verification_state"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
+}

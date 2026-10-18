@@ -1,0 +1,18 @@
+{
+  "id": "landscape-brand",
+  "name": "Horizontal 16:9 (vinheta, institucional, explicativo)",
+  "width": 1920,
+  "height": 1080,
+  "aspect": "16:9",
+  "fps": 30,
+  "duration_range_s": [
+    3,
+    120
+  ],
+  "safe_zone": {
+    "top": 0.07,
+    "bottom": 0.07,
+    "side": 0.06
+  },
+  "notes": "Formato padrão do template. Para logo/vinheta, 3-8 s; para explicativo, uma ideia por cena."
+}

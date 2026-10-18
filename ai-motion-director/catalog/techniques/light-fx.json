@@ -1,0 +1,359 @@
+[
+ {
+  "id": "volumetric-lighting",
+  "name": "Iluminação volumétrica e feixes de luz",
+  "category": "light-fx",
+  "narrative_intents": [
+   "reveal",
+   "emphasis"
+  ],
+  "emotions": [
+   "wonder",
+   "calm"
+  ],
+  "motion_type": "light",
+  "contexts": [
+   "trailer",
+   "logo-brand",
+   "ad"
+  ],
+  "complexity": 4,
+  "feasibility": "B",
+  "engines": [
+   "canvas-motion-kit",
+   "threejs"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado) (raios radiais) ou Three.js (pacote npm) com captura por screenshot; não testado neste ambiente",
+  "when_to_use": "Para revelar objeto/texto com atmosfera, ou dar sensação de espaço.",
+  "why": "Luz direcional guia o olhar e cria profundidade.",
+  "risks": [
+   "Banding em gradientes escuros",
+   "Excesso lava o contraste"
+  ],
+  "alternatives": [
+   "Halo suave (glow-light-rays)"
+  ],
+  "kit": [
+   "M.halo",
+   "M.glow"
+  ]
+ },
+ {
+  "id": "glitch-distortion",
+  "name": "Glitch e distorção",
+  "category": "light-fx",
+  "narrative_intents": [
+   "impact",
+   "tension"
+  ],
+  "emotions": [
+   "tension",
+   "urgency",
+   "surprise"
+  ],
+  "motion_type": "deform",
+  "contexts": [
+   "music-video",
+   "trailer",
+   "short-social",
+   "ad"
+  ],
+  "complexity": 3,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado)",
+  "when_to_use": "Para falha, ruptura, erro de sistema ou transição agressiva.",
+  "why": "Aberração cromática curta sinaliza quebra e acorda a atenção.",
+  "risks": [
+   "Uso constante vira ruído",
+   "Pode soar datado"
+  ],
+  "alternatives": [
+   "Shake + flash (impact-shake-flash)"
+  ],
+  "kit": [
+   "M.chroma",
+   "M.shake"
+  ]
+ },
+ {
+  "id": "displacement-mapping",
+  "name": "Displacement mapping (refração e relevo)",
+  "category": "light-fx",
+  "narrative_intents": [
+   "transformation",
+   "emphasis"
+  ],
+  "emotions": [
+   "wonder",
+   "tension"
+  ],
+  "motion_type": "deform",
+  "contexts": [
+   "trailer",
+   "ad",
+   "music-video"
+  ],
+  "complexity": 4,
+  "feasibility": "B",
+  "engines": [
+   "canvas-motion-kit",
+   "threejs"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado) (getImageData: lento, use em quadros-chave) ou Three.js (pacote npm) com captura por screenshot; não testado neste ambiente",
+  "when_to_use": "Para ondulação, calor, vidro e distorção guiada por textura.",
+  "why": "Dá física a imagens estáticas.",
+  "risks": [
+   "getImageData por frame é lento em 1080p"
+  ],
+  "alternatives": [
+   "Ondulação por seno em fatias de imagem"
+  ]
+ },
+ {
+  "id": "drop-shadows-ao",
+  "name": "Sombras projetadas e oclusão",
+  "category": "light-fx",
+  "narrative_intents": [
+   "depth"
+  ],
+  "emotions": [
+   "calm",
+   "confidence"
+  ],
+  "motion_type": "light",
+  "contexts": [
+   "any"
+  ],
+  "complexity": 2,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado) (shadowBlur)",
+  "when_to_use": "Para separar camadas e dar tridimensionalidade leve.",
+  "why": "Profundidade barata.",
+  "risks": [
+   "Sombra pesada em muitos elementos reduz o fps de render"
+  ],
+  "alternatives": [
+   "Camadas com contraste de tom"
+  ],
+  "kit": [
+   "M.glow"
+  ]
+ },
+ {
+  "id": "motion-blur",
+  "name": "Motion blur",
+  "category": "light-fx",
+  "narrative_intents": [
+   "speed-change",
+   "continuity"
+  ],
+  "emotions": [
+   "confidence"
+  ],
+  "motion_type": "time",
+  "contexts": [
+   "any"
+  ],
+  "complexity": 2,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado) (render.py --blur N: sub-frames; custa N× no tempo)",
+  "when_to_use": "Em movimentos rápidos e transições whip.",
+  "why": "Fluidez e aparência cinematográfica.",
+  "risks": [
+   "Custo de render multiplicado",
+   "Obturador alto borra texto"
+  ],
+  "alternatives": [
+   "Easing mais suave"
+  ]
+ },
+ {
+  "id": "glow-light-rays",
+  "name": "Glow e raios de luz",
+  "category": "light-fx",
+  "narrative_intents": [
+   "emphasis",
+   "reveal"
+  ],
+  "emotions": [
+   "wonder",
+   "enthusiasm"
+  ],
+  "motion_type": "light",
+  "contexts": [
+   "logo-brand",
+   "trailer",
+   "ad"
+  ],
+  "complexity": 2,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado)",
+  "when_to_use": "Para destacar elementos, simular néon, energia ou revelação.",
+  "why": "Luz atrai o olhar.",
+  "risks": [
+   "Muito glow lava o contraste"
+  ],
+  "alternatives": [
+   "Contorno colorido"
+  ],
+  "kit": [
+   "M.glow",
+   "M.halo"
+  ]
+ },
+ {
+  "id": "color-grading-motion",
+  "name": "Correção e gradação de cor para motion",
+  "category": "light-fx",
+  "narrative_intents": [
+   "continuity",
+   "warmth"
+  ],
+  "emotions": [
+   "calm",
+   "nostalgia",
+   "confidence"
+  ],
+  "motion_type": "light",
+  "contexts": [
+   "any"
+  ],
+  "complexity": 3,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit",
+   "ffmpeg-post"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado) (overlays/curvas simples) ou FFmpeg (LUT)",
+  "when_to_use": "Para unificar assets de origens diferentes e dar clima.",
+  "why": "Cor é emoção e coesão.",
+  "risks": [
+   "Gradação pesada esmaga detalhes"
+  ],
+  "alternatives": [
+   "Paleta fixa por estilo (styles/*.json)"
+  ],
+  "kit": [
+   "M.mix",
+   "M.vignette"
+  ]
+ },
+ {
+  "id": "color-gradient-animation",
+  "name": "Animação de cor e gradientes",
+  "category": "light-fx",
+  "narrative_intents": [
+   "transformation",
+   "warmth"
+  ],
+  "emotions": [
+   "calm",
+   "wonder"
+  ],
+  "motion_type": "opacity",
+  "contexts": [
+   "any"
+  ],
+  "complexity": 1,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado)",
+  "when_to_use": "Para mudar de clima ou estado.",
+  "why": "Cor é a emoção mais direta.",
+  "risks": [
+   "Cores com contraste insuficiente"
+  ],
+  "alternatives": [
+   "Cor fixa"
+  ],
+  "kit": [
+   "M.mix",
+   "M.hsl"
+  ]
+ },
+ {
+  "id": "vignette-borders",
+  "name": "Vinheta e bordas",
+  "category": "light-fx",
+  "narrative_intents": [
+   "warmth",
+   "emphasis"
+  ],
+  "emotions": [
+   "nostalgia",
+   "calm"
+  ],
+  "motion_type": "light",
+  "contexts": [
+   "any"
+  ],
+  "complexity": 1,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado)",
+  "when_to_use": "Para concentrar o olhar e dar clima.",
+  "why": "Foco e atmosfera baratos.",
+  "risks": [
+   "Vinheta forte escurece cantos úteis"
+  ],
+  "alternatives": [
+   "Gradiente suave"
+  ],
+  "kit": [
+   "M.vignette"
+  ]
+ },
+ {
+  "id": "impact-shake-flash",
+  "name": "Impacto: shake, flash e silêncio",
+  "category": "light-fx",
+  "narrative_intents": [
+   "impact"
+  ],
+  "emotions": [
+   "surprise",
+   "tension"
+  ],
+  "motion_type": "deform",
+  "contexts": [
+   "short-social",
+   "ad",
+   "trailer",
+   "logo-brand"
+  ],
+  "complexity": 2,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado)",
+  "when_to_use": "No momento de maior impacto do vídeo, preparado por tensão.",
+  "why": "Combinação visual-sonora que o corpo sente.",
+  "risks": [
+   "Sem preparação não impacta",
+   "Uma vez por vídeo curto"
+  ],
+  "alternatives": [
+   "Escala rápida com overshoot"
+  ],
+  "kit": [
+   "M.shake"
+  ]
+ }
+]

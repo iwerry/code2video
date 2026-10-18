@@ -1,0 +1,50 @@
+{
+  "id": "threejs",
+  "name": "Three.js (WebGL)",
+  "version": "1.0.0",
+  "project_types": [
+    "3d-simple",
+    "product-spin",
+    "camera-projection",
+    "procedural-geometry"
+  ],
+  "capabilities": [
+    "3d",
+    "deterministic-seek",
+    "particles"
+  ],
+  "requirements": {
+    "binaries": [],
+    "python_modules": [],
+    "node_packages": [
+      "three"
+    ],
+    "notes": "WebGL em Chromium headless usa renderização por software; criar o renderer com preserveDrawingBuffer:true para window.__canvas."
+  },
+  "inputs": [
+    "cena Three.js controlada por t dentro de window.__seek"
+  ],
+  "outputs": [
+    "MP4 via render.py"
+  ],
+  "limitations": [
+    "não testado neste ambiente",
+    "performance de WebGL por software pode inviabilizar cenas pesadas"
+  ],
+  "render_requirements": "render.py com window.__canvas apontando para o canvas WebGL",
+  "validation": {
+    "method": "testar 3 frames e medir tempo antes de planejar cenas pesadas"
+  },
+  "availability": {
+    "probes": [
+      {
+        "kind": "node_package",
+        "name": "three"
+      }
+    ]
+  },
+  "verification": {
+    "state": "implemented-untested",
+    "evidence": []
+  }
+}

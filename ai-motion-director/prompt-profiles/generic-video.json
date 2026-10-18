@@ -1,0 +1,31 @@
+{
+  "id": "generic-video",
+  "name": "Gerador de vídeo genérico (modelo)",
+  "medium": "video",
+  "version": "1.0.0",
+  "capabilities_verified": false,
+  "known_limitations": [
+    "texto legível na imagem costuma falhar: componha texto por código",
+    "continuidade de personagem entre planos não é garantida: use imagem de referência/seed se a ferramenta permitir",
+    "física e mãos podem falhar",
+    "movimento de câmera complexo pode ser ignorado"
+  ],
+  "max_prompt_words": 120,
+  "supports_camera_motion": null,
+  "supports_text_in_image": null,
+  "template": "{subject}, {action} | {environment} | Enquadramento: {framing} | Câmera: {camera_motion} | Luz: {lighting} | Atmosfera/estilo: {atmosphere}, {style} | Duração {duration_s} s, proporção {aspect} | Evitar: {restrictions}",
+  "fields": [
+    "subject",
+    "action",
+    "environment",
+    "framing",
+    "camera_motion",
+    "lighting",
+    "atmosphere",
+    "style",
+    "duration_s",
+    "aspect",
+    "restrictions"
+  ],
+  "notes": "MODELO. Copie para prompt-profiles/<ferramenta>.json e preencha com capacidades confirmadas na documentação da ferramenta (capabilities_verified=true só depois de verificar)."
+}

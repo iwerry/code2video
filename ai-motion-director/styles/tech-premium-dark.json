@@ -1,0 +1,23 @@
+{
+  "id": "tech-premium-dark",
+  "name": "Tech premium escuro",
+  "palette": {
+    "bg": "#0b0d12",
+    "ink": "#f4f1ea",
+    "accent": "#ff5a36",
+    "dim": "#5b6272"
+  },
+  "easing": [
+    "outExpo",
+    "inOutCubic",
+    "spring(zeta .38-.5)"
+  ],
+  "tempo": "tensão curta, estalo, respiro longo",
+  "motion_language": "luz que nasce do escuro, traços finos, partículas, glow contido, grão discreto",
+  "sound": "drone grave + riser, impacto com silêncio antes, shimmer no fecho",
+  "avoid": [
+    "neon saturado em tudo",
+    "glitch constante",
+    "texto pequeno"
+  ]
+}

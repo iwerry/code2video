@@ -1,0 +1,38 @@
+{
+  "id": "creative-intelligence",
+  "name": "Creative Intelligence",
+  "version": "1.0.0",
+  "kind": "knowledge",
+  "responsibility": "Interpretar o objetivo e transformá-lo em Creative Brief e estratégia criativa (público, mensagem única, emoção de partida→chegada, diferencial, critérios de sucesso).",
+  "core_contract": 1,
+  "docs": [
+    "references/creative-brief.md"
+  ],
+  "data": [],
+  "scripts": [],
+  "consumes": [],
+  "produces": [
+    "creative-brief"
+  ],
+  "depends_on": [],
+  "optional_integrations": [
+    {
+      "skill": "deep-research",
+      "purpose": "pesquisar tendências atuais ou referências do setor quando o briefing depende delas",
+      "fallback": "declarar que a tendência não foi pesquisada e seguir com princípios criativos"
+    }
+  ],
+  "known_errors": [
+    "brief sem 'message' única ou sem critérios de sucesso observáveis é rejeitado pelo contrato creative-brief"
+  ],
+  "limitations": [
+    "não prevê desempenho nem inventa métricas de audiência"
+  ],
+  "verification": {
+    "state": "implemented-untested",
+    "evidence": [
+      "examples/short-vertical-dado.md",
+      "examples/logo-briefing-incompleto.md"
+    ]
+  }
+}

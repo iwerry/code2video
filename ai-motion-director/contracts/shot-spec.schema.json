@@ -1,0 +1,77 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Especificação de plano para geração por IA (entrada do Prompt Engineering)",
+  "type": "object",
+  "required": [
+    "id",
+    "subject",
+    "action",
+    "framing",
+    "duration_s",
+    "aspect",
+    "profile"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "$ref": "common.schema.json#/definitions/id"
+    },
+    "subject": {
+      "type": "string",
+      "minLength": 1
+    },
+    "action": {
+      "type": "string",
+      "minLength": 1
+    },
+    "environment": {
+      "type": "string"
+    },
+    "framing": {
+      "type": "string",
+      "minLength": 1
+    },
+    "camera_motion": {
+      "type": "string"
+    },
+    "lighting": {
+      "type": "string"
+    },
+    "atmosphere": {
+      "type": "string"
+    },
+    "style": {
+      "type": "string"
+    },
+    "duration_s": {
+      "type": "number",
+      "minimum": 0.5
+    },
+    "aspect": {
+      "type": "string",
+      "enum": [
+        "16:9",
+        "9:16",
+        "1:1",
+        "4:5"
+      ]
+    },
+    "restrictions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "continuity_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "profile": {
+      "$ref": "common.schema.json#/definitions/id"
+    }
+  }
+}

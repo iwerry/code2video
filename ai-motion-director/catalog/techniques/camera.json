@@ -1,0 +1,79 @@
+[
+ {
+  "id": "parallax-multiplane",
+  "name": "Parallax multiplano",
+  "category": "camera",
+  "narrative_intents": [
+   "depth",
+   "reveal"
+  ],
+  "emotions": [
+   "wonder",
+   "calm",
+   "empathy"
+  ],
+  "motion_type": "camera",
+  "contexts": [
+   "documentary",
+   "short-social",
+   "institutional",
+   "trailer"
+  ],
+  "complexity": 3,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado)",
+  "when_to_use": "Para dar profundidade a camadas 2D, introduzir cenários, conduzir lentamente.",
+  "why": "Velocidades diferentes por plano criam espaço sem 3D.",
+  "risks": [
+   "Excesso causa enjoo",
+   "Camadas mal recortadas denunciam"
+  ],
+  "alternatives": [
+   "Zoom lento simples (camera-moves-2d)"
+  ],
+  "kit": [
+   "M.plane",
+   "M.cam"
+  ]
+ },
+ {
+  "id": "camera-moves-2d",
+  "name": "Movimentos de câmera 2D/3D",
+  "category": "camera",
+  "narrative_intents": [
+   "reveal",
+   "depth",
+   "emphasis"
+  ],
+  "emotions": [
+   "calm",
+   "curiosity",
+   "tension"
+  ],
+  "motion_type": "camera",
+  "contexts": [
+   "any"
+  ],
+  "complexity": 2,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado)",
+  "when_to_use": "Para revelar, aproximar, conduzir atenção.",
+  "why": "Câmera virtual é a ferramenta narrativa mais barata.",
+  "risks": [
+   "Movimento sem motivo distrai"
+  ],
+  "alternatives": [
+   "Plano fixo com animação interna"
+  ],
+  "kit": [
+   "M.cam",
+   "M.plane"
+  ]
+ }
+]

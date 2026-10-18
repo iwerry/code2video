@@ -1,0 +1,89 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Relatório de qualidade — 'technical' e 'creative' são registrados separadamente",
+  "type": "object",
+  "required": [
+    "kind",
+    "target",
+    "findings",
+    "status"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "kind": {
+      "type": "string",
+      "enum": [
+        "technical",
+        "creative"
+      ]
+    },
+    "target": {
+      "type": "string",
+      "minLength": 1
+    },
+    "measurements": {
+      "type": "object"
+    },
+    "scale": {
+      "type": "string",
+      "description": "para notas criativas: 1 compromete · 2 fraco · 3 funciona · 4 bom · 5 forte (qualitativa)"
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "problem",
+          "evidence",
+          "impact",
+          "fix",
+          "priority"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "problem": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence": {
+            "type": "string",
+            "minLength": 1
+          },
+          "impact": {
+            "type": "string",
+            "minLength": 1
+          },
+          "fix": {
+            "type": "string",
+            "minLength": 1
+          },
+          "priority": {
+            "type": "string",
+            "enum": [
+              "alta",
+              "media",
+              "baixa"
+            ]
+          },
+          "criterion": {
+            "type": "string"
+          },
+          "score": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 5
+          },
+          "resolved": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "status": {
+      "$ref": "common.schema.json#/definitions/status"
+    },
+    "evidence": {
+      "$ref": "common.schema.json#/definitions/evidence"
+    }
+  }
+}

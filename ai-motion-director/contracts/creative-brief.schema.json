@@ -1,0 +1,127 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Briefing criativo (saída do módulo Creative Intelligence)",
+  "type": "object",
+  "required": [
+    "objective",
+    "audience",
+    "message",
+    "emotion",
+    "platform",
+    "format",
+    "duration_s",
+    "narrative_strategy",
+    "visual_direction",
+    "sound_direction",
+    "differentiator",
+    "constraints",
+    "success_criteria",
+    "assumptions",
+    "status"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "objective": {
+      "type": "string",
+      "minLength": 1
+    },
+    "audience": {
+      "type": "string",
+      "minLength": 1
+    },
+    "message": {
+      "type": "string",
+      "minLength": 1,
+      "description": "UMA frase que deve ser lembrada"
+    },
+    "emotion": {
+      "type": "object",
+      "required": [
+        "from",
+        "to"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "from": {
+          "type": "string",
+          "minLength": 1
+        },
+        "to": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "platform": {
+      "type": "string",
+      "minLength": 1
+    },
+    "format": {
+      "type": "string",
+      "enum": [
+        "16:9",
+        "9:16",
+        "1:1",
+        "4:5",
+        "other"
+      ]
+    },
+    "duration_s": {
+      "type": "number",
+      "minimum": 1
+    },
+    "narrative_strategy": {
+      "type": "string",
+      "minLength": 1
+    },
+    "visual_direction": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sound_direction": {
+      "type": "string",
+      "minLength": 1
+    },
+    "differentiator": {
+      "type": "string",
+      "minLength": 1
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "success_criteria": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "description": "observáveis, não 'ficar bonito'"
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "description": "premissas declaradas quando o briefing era incompleto"
+    },
+    "open_questions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "status": {
+      "$ref": "common.schema.json#/definitions/status"
+    },
+    "evidence": {
+      "$ref": "common.schema.json#/definitions/evidence"
+    }
+  }
+}

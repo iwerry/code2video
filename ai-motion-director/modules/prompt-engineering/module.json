@@ -1,0 +1,36 @@
+{
+  "id": "prompt-engineering",
+  "name": "Prompt Engineering",
+  "version": "1.0.0",
+  "kind": "knowledge",
+  "responsibility": "Converter decisões criativas em prompts para ferramentas de geração (imagem, vídeo, animação, som). Princípios universais ficam na referência; limitações de cada ferramenta ficam em prompt-profiles/*.json.",
+  "core_contract": 1,
+  "docs": [
+    "references/prompt-engineering.md"
+  ],
+  "data": [
+    "prompt-profiles"
+  ],
+  "scripts": [
+    "scripts/prompt_build.py"
+  ],
+  "consumes": [
+    "shot-spec"
+  ],
+  "produces": [],
+  "depends_on": [],
+  "optional_integrations": [],
+  "known_errors": [
+    "shot-spec sem sujeito/ação/enquadramento é rejeitado",
+    "perfil com capabilities_verified=false gera aviso no prompt montado"
+  ],
+  "limitations": [
+    "nenhum perfil de ferramenta específica foi verificado: os perfis incluídos são genéricos e marcados como não verificados"
+  ],
+  "verification": {
+    "state": "verified",
+    "evidence": [
+      "tests/test_prompt_build.py"
+    ]
+  }
+}

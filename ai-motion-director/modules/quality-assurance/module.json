@@ -1,0 +1,37 @@
+{
+  "id": "quality-assurance",
+  "name": "Quality Assurance",
+  "version": "1.0.0",
+  "kind": "qa",
+  "responsibility": "Avaliar proposta e material produzido com evidência. Registra validação técnica (medições, frames) e avaliação criativa (matriz) em relatórios separados.",
+  "core_contract": 1,
+  "docs": [
+    "references/quality-assurance.md"
+  ],
+  "data": [],
+  "scripts": [
+    "scripts/inspect_video.py"
+  ],
+  "consumes": [
+    "execution-report",
+    "script",
+    "creative-brief"
+  ],
+  "produces": [
+    "qa-report"
+  ],
+  "depends_on": [],
+  "optional_integrations": [],
+  "known_errors": [
+    "relatório com status 'validated' sem evidence é rejeitado"
+  ],
+  "limitations": [
+    "a inspeção técnica detecta quadros pretos/parados, não julga estética: a avaliação criativa exige olhar a folha de contato"
+  ],
+  "verification": {
+    "state": "verified",
+    "evidence": [
+      "tests/test_pipeline.py"
+    ]
+  }
+}

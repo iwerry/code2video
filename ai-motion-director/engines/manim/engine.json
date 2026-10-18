@@ -1,0 +1,49 @@
+{
+  "id": "manim",
+  "name": "Manim (Python)",
+  "version": "1.0.0",
+  "project_types": [
+    "math-explainer",
+    "science-explainer"
+  ],
+  "capabilities": [
+    "math",
+    "vector",
+    "text",
+    "2d"
+  ],
+  "requirements": {
+    "binaries": [],
+    "python_modules": [
+      "manim"
+    ],
+    "node_packages": [],
+    "notes": "Precisa de Cairo/Pango e LaTeX para fórmulas."
+  },
+  "inputs": [
+    "cena Python com classe Scene"
+  ],
+  "outputs": [
+    "MP4 via manim render"
+  ],
+  "limitations": [
+    "não testado neste ambiente"
+  ],
+  "render_requirements": "manim -qh",
+  "validation": {
+    "method": "abrir o MP4 e inspecionar",
+    "command": "manim -qh cena.py Cena"
+  },
+  "availability": {
+    "probes": [
+      {
+        "kind": "python_module",
+        "name": "manim"
+      }
+    ]
+  },
+  "verification": {
+    "state": "implemented-untested",
+    "evidence": []
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Definições comuns",
+  "definitions": {
+    "status": {
+      "type": "string",
+      "enum": [
+        "recommended",
+        "planned",
+        "generated",
+        "executed",
+        "validated"
+      ],
+      "description": "recommended: ideia · planned: plano de execução · generated: código/instrução gerado e não rodado · executed: rodou, há registro · validated: executou e foi inspecionado. executed/validated exigem evidence."
+    },
+    "evidence_item": {
+      "type": "object",
+      "required": [
+        "type",
+        "ref"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "frame",
+            "log",
+            "test",
+            "file",
+            "metric",
+            "review"
+          ]
+        },
+        "ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "note": {
+          "type": "string"
+        }
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/evidence_item"
+      }
+    },
+    "semver": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*$"
+    },
+    "verification_state": {
+      "type": "string",
+      "enum": [
+        "verified",
+        "implemented-untested",
+        "planned"
+      ]
+    }
+  }
+}

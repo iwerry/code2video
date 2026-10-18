@@ -1,0 +1,94 @@
+{
+  "title": "R$ 3.200",
+  "format": "9:16",
+  "fps": 24,
+  "duration_s": 8,
+  "status": "generated",
+  "scenes": [
+    {
+      "name": "tensao",
+      "start_s": 0,
+      "end_s": 3.25,
+      "narrative_goal": "acumular incômodo",
+      "emotion": "tensão",
+      "visual": "contador sobe com inExpo; fichas de taxa pipocam cada vez mais rápido; câmera empurra",
+      "techniques": [
+        "counter-number-roll",
+        "anticipation-follow-through"
+      ],
+      "motions": [
+        {
+          "what": "contador R$ 0 → R$ 3.200",
+          "duration_s": 3.25,
+          "ease": "inExpo"
+        }
+      ],
+      "cues": [
+        {
+          "t": 0.0,
+          "type": "riser"
+        },
+        {
+          "t": 0.8,
+          "type": "tick"
+        }
+      ]
+    },
+    {
+      "name": "silencio",
+      "start_s": 3.25,
+      "end_s": 3.4,
+      "narrative_goal": "vazio antes do impacto",
+      "emotion": "suspensão",
+      "visual": "contador congela",
+      "techniques": [
+        "dramatic-pause"
+      ]
+    },
+    {
+      "name": "impacto",
+      "start_s": 3.4,
+      "end_s": 4.1,
+      "narrative_goal": "entregar o número",
+      "emotion": "surpresa",
+      "visual": "R$ 3.200 estala (escala 1.4→1), shake e flash",
+      "techniques": [
+        "impact-shake-flash",
+        "counter-number-roll"
+      ],
+      "cues": [
+        {
+          "t": 3.4,
+          "type": "impact",
+          "gain": 0.9
+        }
+      ]
+    },
+    {
+      "name": "rotulo",
+      "start_s": 4.1,
+      "end_s": 5.0,
+      "narrative_goal": "dar contexto",
+      "emotion": "clareza",
+      "visual": "POR ANO entra por caractere",
+      "techniques": [
+        "kinetic-typography-basic"
+      ],
+      "cues": [
+        {
+          "t": 4.1,
+          "type": "pop"
+        }
+      ]
+    },
+    {
+      "name": "respiro",
+      "start_s": 5.0,
+      "end_s": 8.0,
+      "narrative_goal": "fixar a mensagem",
+      "emotion": "confiança",
+      "visual": "'em taxas bancárias que você nem percebe.' com número estável",
+      "on_screen_text": "em taxas bancárias que você nem percebe."
+    }
+  ]
+}

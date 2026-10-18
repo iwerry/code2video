@@ -1,0 +1,40 @@
+{
+  "id": "narrative-intelligence",
+  "name": "Narrative Intelligence",
+  "version": "1.0.0",
+  "kind": "knowledge",
+  "responsibility": "Construir narrativa e progressão emocional (estrutura por tipo de vídeo, função de cada cena, hook/retenção) e o roteiro com timecodes e storyboard textual. Independente do motor de renderização.",
+  "core_contract": 1,
+  "docs": [
+    "references/narrative-emotion.md",
+    "references/script-storyboard.md"
+  ],
+  "data": [],
+  "scripts": [],
+  "consumes": [
+    "creative-brief"
+  ],
+  "produces": [
+    "script"
+  ],
+  "depends_on": [],
+  "optional_integrations": [
+    {
+      "skill": "docs",
+      "purpose": "entregar roteiro/storyboard como documento compartilhável",
+      "fallback": "entregar em Markdown no próprio relatório"
+    }
+  ],
+  "known_errors": [
+    "roteiro com lacuna/sobreposição de tempo não declarada ou soma ≠ duração é rejeitado (contrato script, checagem semântica)"
+  ],
+  "limitations": [
+    "recomendações de ritmo e emoção são hipóteses criativas, não métricas"
+  ],
+  "verification": {
+    "state": "verified",
+    "evidence": [
+      "tests/test_contracts.py"
+    ]
+  }
+}

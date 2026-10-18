@@ -1,0 +1,18 @@
+{
+  "id": "square-social",
+  "name": "Quadrado 1:1 (feed)",
+  "width": 1080,
+  "height": 1080,
+  "aspect": "1:1",
+  "fps": 30,
+  "duration_range_s": [
+    5,
+    60
+  ],
+  "safe_zone": {
+    "top": 0.08,
+    "bottom": 0.1,
+    "side": 0.07
+  },
+  "notes": "Composição centrada; legendas embutidas porque muita gente assiste sem som."
+}

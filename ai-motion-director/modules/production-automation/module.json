@@ -1,0 +1,42 @@
+{
+  "id": "production-automation",
+  "name": "Production Automation",
+  "version": "1.0.0",
+  "kind": "automation",
+  "responsibility": "Coordenar etapas de produção: preparar projeto, validar artefatos, renderizar, inspecionar, reunir arquivos finais e registrar resultados rastreáveis (execution-report, qa-report).",
+  "core_contract": 1,
+  "docs": [
+    "references/production-automation.md"
+  ],
+  "data": [],
+  "scripts": [
+    "scripts/pipeline.py"
+  ],
+  "consumes": [
+    "production-plan",
+    "script"
+  ],
+  "produces": [
+    "execution-report",
+    "qa-report"
+  ],
+  "depends_on": [
+    "production-engines",
+    "quality-assurance"
+  ],
+  "optional_integrations": [],
+  "known_errors": [
+    "render sem window.__ready aborta com mensagem clara",
+    "projeto sem index.html falha em 'pipeline.py render' antes de abrir o navegador"
+  ],
+  "limitations": [
+    "orquestra scripts locais; não agenda tarefas nem publica em plataformas"
+  ],
+  "verification": {
+    "state": "verified",
+    "evidence": [
+      "tests/test_pipeline.py",
+      "tests/test_render_e2e.py"
+    ]
+  }
+}

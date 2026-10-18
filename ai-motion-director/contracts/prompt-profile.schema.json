@@ -1,0 +1,79 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Perfil de ferramenta de geração (limitações ficam aqui, não nas regras universais)",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "medium",
+    "version",
+    "capabilities_verified",
+    "known_limitations",
+    "template",
+    "fields"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "$ref": "common.schema.json#/definitions/id"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "medium": {
+      "type": "string",
+      "enum": [
+        "image",
+        "video",
+        "image-animation",
+        "audio",
+        "voice"
+      ]
+    },
+    "version": {
+      "$ref": "common.schema.json#/definitions/semver"
+    },
+    "capabilities_verified": {
+      "type": "boolean",
+      "description": "false = capacidades NÃO confirmadas; o agente deve verificar antes de depender delas"
+    },
+    "known_limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "max_prompt_words": {
+      "type": "integer",
+      "minimum": 10
+    },
+    "supports_camera_motion": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "supports_text_in_image": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "template": {
+      "type": "string",
+      "minLength": 1
+    },
+    "fields": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

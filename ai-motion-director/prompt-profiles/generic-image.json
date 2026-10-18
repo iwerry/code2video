@@ -1,0 +1,28 @@
+{
+  "id": "generic-image",
+  "name": "Gerador de imagem genérico (modelo)",
+  "medium": "image",
+  "version": "1.0.0",
+  "capabilities_verified": false,
+  "known_limitations": [
+    "texto legível costuma falhar",
+    "consistência entre imagens exige referência",
+    "gerar fundos limpos (sem primeiro plano) facilita a composição posterior"
+  ],
+  "max_prompt_words": 90,
+  "supports_camera_motion": null,
+  "supports_text_in_image": null,
+  "template": "{subject}, {action} | {environment} | Enquadramento: {framing} | Luz: {lighting} | Atmosfera/estilo: {atmosphere}, {style} | Proporção {aspect} | Evitar: {restrictions}",
+  "fields": [
+    "subject",
+    "action",
+    "environment",
+    "framing",
+    "lighting",
+    "atmosphere",
+    "style",
+    "aspect",
+    "restrictions"
+  ],
+  "notes": "MODELO. Ver generic-video."
+}

@@ -1,0 +1,168 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Roteiro com timecodes (saída de Narrative + Script/Storyboard)",
+  "type": "object",
+  "required": [
+    "title",
+    "format",
+    "fps",
+    "duration_s",
+    "scenes",
+    "status"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "format": {
+      "type": "string",
+      "enum": [
+        "16:9",
+        "9:16",
+        "1:1",
+        "4:5",
+        "other"
+      ]
+    },
+    "fps": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 120
+    },
+    "duration_s": {
+      "type": "number",
+      "minimum": 0.5
+    },
+    "scenes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "start_s",
+          "end_s",
+          "narrative_goal",
+          "emotion",
+          "visual"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "start_s": {
+            "type": "number",
+            "minimum": 0
+          },
+          "end_s": {
+            "type": "number",
+            "minimum": 0
+          },
+          "overlap_s": {
+            "type": "number",
+            "minimum": 0,
+            "description": "sobreposição com a cena anterior (transição)"
+          },
+          "narrative_goal": {
+            "type": "string",
+            "minLength": 1
+          },
+          "emotion": {
+            "type": "string",
+            "minLength": 1
+          },
+          "visual": {
+            "type": "string",
+            "minLength": 1
+          },
+          "framing": {
+            "type": "string"
+          },
+          "camera": {
+            "type": "string"
+          },
+          "on_screen_text": {
+            "type": "string"
+          },
+          "voiceover": {
+            "type": "string"
+          },
+          "transition_out": {
+            "type": "string"
+          },
+          "techniques": {
+            "type": "array",
+            "items": {
+              "$ref": "common.schema.json#/definitions/id"
+            },
+            "description": "ids do catálogo"
+          },
+          "motions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "what",
+                "duration_s"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "what": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "duration_s": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "ease": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "cues": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "t",
+                "type"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "t": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "type": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "gain": {
+                  "type": "number"
+                },
+                "note": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "continuity": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "status": {
+      "$ref": "common.schema.json#/definitions/status"
+    },
+    "evidence": {
+      "$ref": "common.schema.json#/definitions/evidence"
+    }
+  }
+}

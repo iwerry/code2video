@@ -1,0 +1,91 @@
+{
+  "id": "canvas-motion-kit",
+  "name": "Canvas 2D + motion-kit (Playwright → FFmpeg)",
+  "version": "1.0.0",
+  "project_types": [
+    "logo-animation",
+    "vertical-short",
+    "explainer",
+    "data-story",
+    "kinetic-typography",
+    "music-video",
+    "brand-motion",
+    "procedural-animation"
+  ],
+  "capabilities": [
+    "2d",
+    "text",
+    "particles",
+    "data-viz",
+    "deterministic-seek",
+    "audio",
+    "vector",
+    "math"
+  ],
+  "requirements": {
+    "binaries": [
+      "ffmpeg"
+    ],
+    "python_modules": [
+      "playwright",
+      "numpy",
+      "PIL"
+    ],
+    "node_packages": [],
+    "notes": "Chromium do Playwright (no ambiente de referência em /opt/pw-browsers/chromium)."
+  },
+  "inputs": [
+    "assets/template/index.html + motion-kit.js",
+    "window.__meta, window.__seek(t), window.__ready, window.__canvas, window.__sfx (opcional)"
+  ],
+  "outputs": [
+    "MP4 H.264 yuv420p (com áudio opcional)",
+    "PNG de quadro único (--still)",
+    "execution-report opcional (--report)"
+  ],
+  "limitations": [
+    "2D apenas",
+    "sem 3D real nem vídeo de entrada",
+    "render ≈ 0,4-0,7 s/frame em 1080p; --blur N multiplica o custo por N",
+    "sem rede durante o render (fontes/imagens locais)"
+  ],
+  "render_requirements": "Chromium headless com --force-device-scale-factor=1; página precisa expor window.__ready === true",
+  "validation": {
+    "method": "render do template + inspect_video + checagem de duração/áudio",
+    "command": "python scripts/render.py assets/template/index.html /tmp/t.mp4 --fps 12 --end 2 && python scripts/inspect_video.py /tmp/t.mp4"
+  },
+  "availability": {
+    "probes": [
+      {
+        "kind": "binary",
+        "name": "ffmpeg"
+      },
+      {
+        "kind": "binary",
+        "name": "ffprobe"
+      },
+      {
+        "kind": "python_module",
+        "name": "playwright"
+      },
+      {
+        "kind": "python_module",
+        "name": "numpy"
+      },
+      {
+        "kind": "python_module",
+        "name": "PIL"
+      },
+      {
+        "kind": "playwright_chromium",
+        "name": "chromium"
+      }
+    ]
+  },
+  "verification": {
+    "state": "verified",
+    "evidence": [
+      "tests/test_render_e2e.py"
+    ]
+  }
+}

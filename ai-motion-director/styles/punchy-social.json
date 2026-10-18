@@ -1,0 +1,21 @@
+{
+  "id": "punchy-social",
+  "name": "Social direto e de impacto",
+  "palette": {
+    "bg": "#0a2e1f",
+    "ink": "#ffffff",
+    "accent": "#ffd23f"
+  },
+  "easing": [
+    "outExpo",
+    "outBack",
+    "inExpo"
+  ],
+  "tempo": "cortes rápidos (1-2,5 s), um impacto por vídeo",
+  "motion_language": "números e palavras enormes, contador, shake+flash no ponto de virada",
+  "sound": "ticks, riser curto, impacto grave",
+  "avoid": [
+    "introdução com logo",
+    "mais de uma ideia por vídeo"
+  ]
+}

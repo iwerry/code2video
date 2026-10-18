@@ -1,0 +1,232 @@
+[
+ {
+  "id": "complex-mesh-morphing",
+  "name": "Morphing complexo de malhas e vetores",
+  "category": "shape-vector",
+  "narrative_intents": [
+   "transformation",
+   "continuity"
+  ],
+  "emotions": [
+   "wonder",
+   "surprise"
+  ],
+  "motion_type": "deform",
+  "contexts": [
+   "logo-brand",
+   "explainer",
+   "ad"
+  ],
+  "complexity": 4,
+  "feasibility": "B",
+  "engines": [
+   "canvas-motion-kit",
+   "threejs",
+   "svg-gsap"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado) para vetores; Three.js (pacote npm) com captura por screenshot; não testado neste ambiente para malhas 3D",
+  "when_to_use": "Quando uma forma complexa precisa virar outra mantendo volume e continuidade.",
+  "why": "Transformação visível comunica evolução/identidade.",
+  "risks": [
+   "Contagem de pontos diferentes gera nós torcidos",
+   "Malha 3D exige topologia compatível"
+  ],
+  "alternatives": [
+   "Crossfade com match cut (match-cut)",
+   "Morph simples (shape-morph-simple)"
+  ],
+  "kit": [
+   "M.resample",
+   "M.morph"
+  ]
+ },
+ {
+  "id": "isometric-animation",
+  "name": "Animação isométrica",
+  "category": "shape-vector",
+  "narrative_intents": [
+   "process",
+   "depth",
+   "tech-data"
+  ],
+  "emotions": [
+   "confidence",
+   "curiosity"
+  ],
+  "motion_type": "transform",
+  "contexts": [
+   "explainer",
+   "ui-product",
+   "institutional"
+  ],
+  "complexity": 4,
+  "feasibility": "B",
+  "engines": [
+   "canvas-motion-kit",
+   "svg-gsap"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado) ou SVG + GSAP ou SMIL; não testado neste ambiente",
+  "when_to_use": "Para explicar sistemas, fluxos e cenários 'maquete'.",
+  "why": "Dá aparência 3D legível e organizada sem 3D real.",
+  "risks": [
+   "Proporção e luz precisam ser matemáticas e consistentes"
+  ],
+  "alternatives": [
+   "Diagrama plano com paralaxe"
+  ]
+ },
+ {
+  "id": "shape-layer-deformers",
+  "name": "Deformadores de forma (wiggle, zigzag, pucker/bloat)",
+  "category": "shape-vector",
+  "narrative_intents": [
+   "life-weight",
+   "transformation"
+  ],
+  "emotions": [
+   "enthusiasm",
+   "surprise"
+  ],
+  "motion_type": "deform",
+  "contexts": [
+   "logo-brand",
+   "short-social",
+   "explainer"
+  ],
+  "complexity": 3,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado)",
+  "when_to_use": "Para formas orgânicas, 'respirando', ou transformação de contornos.",
+  "why": "Contornos que vivem dão personalidade gráfica.",
+  "risks": [
+   "Parâmetros altos viram caos"
+  ],
+  "alternatives": [
+   "Escala com mola (secondary-motion-overlap)"
+  ],
+  "kit": [
+   "M.wiggle",
+   "M.polyShape",
+   "M.resample"
+  ]
+ },
+ {
+  "id": "trim-paths",
+  "name": "Animação de traçado (trim paths)",
+  "category": "shape-vector",
+  "narrative_intents": [
+   "process",
+   "reveal"
+  ],
+  "emotions": [
+   "curiosity",
+   "confidence"
+  ],
+  "motion_type": "path",
+  "contexts": [
+   "explainer",
+   "logo-brand",
+   "ui-product",
+   "any"
+  ],
+  "complexity": 2,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit",
+   "svg-gsap"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado)",
+  "when_to_use": "Para desenhar contornos, conexões, rotas, logos.",
+  "why": "Direção do traço guia a leitura e comunica construção.",
+  "risks": [
+   "Comprimento do caminho precisa ser calculado"
+  ],
+  "alternatives": [
+   "Wipe ou fade"
+  ],
+  "kit": [
+   "M.trim",
+   "M.polyLen",
+   "M.polyPath"
+  ]
+ },
+ {
+  "id": "write-on-stroke",
+  "name": "Escrita e pinceladas",
+  "category": "shape-vector",
+  "narrative_intents": [
+   "process",
+   "warmth"
+  ],
+  "emotions": [
+   "empathy",
+   "nostalgia"
+  ],
+  "motion_type": "path",
+  "contexts": [
+   "institutional",
+   "explainer",
+   "documentary"
+  ],
+  "complexity": 3,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit",
+   "svg-gsap"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado)",
+  "when_to_use": "Para assinatura, anotação, desenho 'à mão'.",
+  "why": "Humaniza e dá ideia de autoria.",
+  "risks": [
+   "Traço mecânico demais perde o efeito"
+  ],
+  "alternatives": [
+   "Texto com stagger"
+  ],
+  "kit": [
+   "M.trim"
+  ]
+ },
+ {
+  "id": "shape-morph-simple",
+  "name": "Morphing de formas simples",
+  "category": "shape-vector",
+  "narrative_intents": [
+   "transformation"
+  ],
+  "emotions": [
+   "surprise",
+   "wonder"
+  ],
+  "motion_type": "deform",
+  "contexts": [
+   "logo-brand",
+   "explainer",
+   "short-social"
+  ],
+  "complexity": 2,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit",
+   "svg-gsap"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado)",
+  "when_to_use": "Para mostrar mudança de estado/ideia numa forma só.",
+  "why": "Continuidade da forma explica a transformação.",
+  "risks": [
+   "Pontos mal alinhados torcem a forma"
+  ],
+  "alternatives": [
+   "Crossfade"
+  ],
+  "kit": [
+   "M.resample",
+   "M.morph",
+   "M.circlePts",
+   "M.polyShape"
+  ]
+ }
+]

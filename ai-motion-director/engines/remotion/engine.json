@@ -1,0 +1,64 @@
+{
+  "id": "remotion",
+  "name": "Remotion (React)",
+  "version": "1.0.0",
+  "project_types": [
+    "templated-video",
+    "data-driven-series",
+    "batch-render"
+  ],
+  "capabilities": [
+    "2d",
+    "text",
+    "data-viz",
+    "batch-render",
+    "audio"
+  ],
+  "requirements": {
+    "binaries": [
+      "node",
+      "npx"
+    ],
+    "python_modules": [],
+    "node_packages": [
+      "remotion",
+      "@remotion/cli"
+    ],
+    "notes": "Usa Chromium próprio; exige baixar pacotes npm."
+  },
+  "inputs": [
+    "projeto React com useCurrentFrame()"
+  ],
+  "outputs": [
+    "MP4 via npx remotion render"
+  ],
+  "limitations": [
+    "não testado neste ambiente",
+    "requer instalação de dependências e rede para npm"
+  ],
+  "render_requirements": "npx remotion render",
+  "validation": {
+    "method": "abrir o MP4 e inspecionar",
+    "command": "npx remotion render"
+  },
+  "availability": {
+    "probes": [
+      {
+        "kind": "binary",
+        "name": "node"
+      },
+      {
+        "kind": "binary",
+        "name": "npx"
+      },
+      {
+        "kind": "node_package",
+        "name": "remotion"
+      }
+    ]
+  },
+  "verification": {
+    "state": "implemented-untested",
+    "evidence": []
+  }
+}

@@ -1,0 +1,400 @@
+[
+ {
+  "id": "cel-2d-3d-hybrid",
+  "name": "Cel Animation Integration (híbrido 2D/3D)",
+  "category": "3d-compositing",
+  "narrative_intents": [
+   "life-weight",
+   "continuity"
+  ],
+  "emotions": [
+   "wonder",
+   "enthusiasm"
+  ],
+  "motion_type": "structural",
+  "contexts": [
+   "trailer",
+   "ad"
+  ],
+  "complexity": 5,
+  "feasibility": "C",
+  "engines": [
+   "desktop-dcc-external"
+  ],
+  "requirements": "Ferramenta desktop externa (After Effects, Blender, Cinema 4D ou Houdini); não executa neste ambiente",
+  "when_to_use": "Quando a identidade pede desenho quadro a quadro sobre volumes 3D (estilo autoral).",
+  "why": "Une a expressividade do desenho à profundidade do 3D e vira assinatura visual.",
+  "risks": [
+   "Exige controle de perspectiva e timing quadro a quadro",
+   "Custo de produção alto"
+  ],
+  "alternatives": [
+   "Toon shading (npr-toon-shading)",
+   "Animação 2D com parallax (parallax-multiplane)"
+  ]
+ },
+ {
+  "id": "optical-flow-tracking",
+  "name": "Optical flow e vetores de movimento",
+  "category": "3d-compositing",
+  "narrative_intents": [
+   "continuity"
+  ],
+  "emotions": [
+   "curiosity"
+  ],
+  "motion_type": "time",
+  "contexts": [
+   "documentary",
+   "ad"
+  ],
+  "complexity": 5,
+  "feasibility": "C",
+  "engines": [
+   "desktop-dcc-external"
+  ],
+  "requirements": "Ferramenta desktop externa (After Effects, Blender, Cinema 4D ou Houdini); não executa neste ambiente; ou OpenCV (não verificado aqui)",
+  "when_to_use": "Para guiar gráficos pelo movimento de vídeo real com precisão.",
+  "why": "Elementos grudam no movimento do mundo e parecem parte da cena.",
+  "risks": [
+   "Exige footage de qualidade",
+   "Pipeline manual"
+  ],
+  "alternatives": [
+   "Tracking de pontos simples em editor"
+  ]
+ },
+ {
+  "id": "camera-projection-mapping",
+  "name": "Camera projection / projection mapping",
+  "category": "3d-compositing",
+  "narrative_intents": [
+   "depth",
+   "reveal"
+  ],
+  "emotions": [
+   "wonder",
+   "curiosity"
+  ],
+  "motion_type": "camera",
+  "contexts": [
+   "documentary",
+   "trailer",
+   "ad"
+  ],
+  "complexity": 5,
+  "feasibility": "B",
+  "engines": [
+   "threejs",
+   "desktop-dcc-external"
+  ],
+  "requirements": "Three.js (pacote npm) com captura por screenshot; não testado neste ambiente",
+  "when_to_use": "Para dar paralaxe real a fotos ou ilustrações estáticas.",
+  "why": "Cria câmera cinematográfica a partir de um único quadro.",
+  "risks": [
+   "Exige limpar camadas (inpainting)",
+   "Distorção nas bordas se a câmera se move muito"
+  ],
+  "alternatives": [
+   "Parallax multiplano 2.5D (parallax-multiplane)"
+  ]
+ },
+ {
+  "id": "matchmoving-camera-tracking",
+  "name": "Matchmoving e tracking 3D de câmera",
+  "category": "3d-compositing",
+  "narrative_intents": [
+   "continuity"
+  ],
+  "emotions": [
+   "confidence"
+  ],
+  "motion_type": "camera",
+  "contexts": [
+   "documentary",
+   "ad",
+   "trailer"
+  ],
+  "complexity": 5,
+  "feasibility": "C",
+  "engines": [
+   "desktop-dcc-external"
+  ],
+  "requirements": "Ferramenta desktop externa (After Effects, Blender, Cinema 4D ou Houdini); não executa neste ambiente",
+  "when_to_use": "Para integrar CGI em filmagem real com câmera em movimento.",
+  "why": "Integração convincente entre real e gráfico.",
+  "risks": [
+   "Exige footage com parallax e texturas rastreáveis"
+  ],
+  "alternatives": [
+   "Elementos 2D estáticos sobre vídeo (tela fixa)"
+  ]
+ },
+ {
+  "id": "sss-shading-animation",
+  "name": "Shading de subsuperfície (SSS)",
+  "category": "3d-compositing",
+  "narrative_intents": [
+   "warmth"
+  ],
+  "emotions": [
+   "wonder",
+   "empathy"
+  ],
+  "motion_type": "light",
+  "contexts": [
+   "ad",
+   "trailer"
+  ],
+  "complexity": 5,
+  "feasibility": "C",
+  "engines": [
+   "desktop-dcc-external"
+  ],
+  "requirements": "Ferramenta desktop externa (After Effects, Blender, Cinema 4D ou Houdini); não executa neste ambiente",
+  "when_to_use": "Para materiais translúcidos realistas (pele, cera, gel).",
+  "why": "Realismo tátil em produtos e personagens.",
+  "risks": [
+   "Render lento",
+   "Só vale com modelo 3D de alta qualidade"
+  ],
+  "alternatives": [
+   "Glow interno falso com gradiente radial"
+  ]
+ },
+ {
+  "id": "multipass-compositing",
+  "name": "Composição multipass e passes de profundidade",
+  "category": "3d-compositing",
+  "narrative_intents": [
+   "depth",
+   "continuity"
+  ],
+  "emotions": [
+   "confidence"
+  ],
+  "motion_type": "structural",
+  "contexts": [
+   "ad",
+   "trailer"
+  ],
+  "complexity": 5,
+  "feasibility": "C",
+  "engines": [
+   "desktop-dcc-external"
+  ],
+  "requirements": "Ferramenta desktop externa (After Effects, Blender, Cinema 4D ou Houdini); não executa neste ambiente",
+  "when_to_use": "Quando o look final depende de controlar passes (profundidade, oclusão, reflexos).",
+  "why": "Controle fino de pós sem re-renderizar o 3D.",
+  "risks": [
+   "Pipeline complexo"
+  ],
+  "alternatives": [
+   "Render direto com look fixo"
+  ]
+ },
+ {
+  "id": "deep-data-compositing",
+  "name": "Compositing de dados profundos (deep)",
+  "category": "3d-compositing",
+  "narrative_intents": [
+   "depth",
+   "continuity"
+  ],
+  "emotions": [
+   "confidence"
+  ],
+  "motion_type": "structural",
+  "contexts": [
+   "ad",
+   "trailer"
+  ],
+  "complexity": 5,
+  "feasibility": "C",
+  "engines": [
+   "desktop-dcc-external"
+  ],
+  "requirements": "Ferramenta desktop externa (After Effects, Blender, Cinema 4D ou Houdini); não executa neste ambiente",
+  "when_to_use": "Para integrar renders 3D com elementos volumétricos/transparentes complexos.",
+  "why": "Evita artefatos de bordas em composições densas.",
+  "risks": [
+   "Arquivos enormes; especialista"
+  ],
+  "alternatives": [
+   "Multipass convencional (multipass-compositing)"
+  ]
+ },
+ {
+  "id": "npr-toon-shading",
+  "name": "Renderização não fotorrealista (toon)",
+  "category": "3d-compositing",
+  "narrative_intents": [
+   "life-weight"
+  ],
+  "emotions": [
+   "enthusiasm",
+   "nostalgia"
+  ],
+  "motion_type": "light",
+  "contexts": [
+   "ad",
+   "trailer",
+   "music-video"
+  ],
+  "complexity": 4,
+  "feasibility": "B",
+  "engines": [
+   "threejs",
+   "desktop-dcc-external"
+  ],
+  "requirements": "Three.js (pacote npm) com captura por screenshot; não testado neste ambiente ou Ferramenta desktop externa (After Effects, Blender, Cinema 4D ou Houdini); não executa neste ambiente",
+  "when_to_use": "Para modelos 3D com cara de ilustração/HQ.",
+  "why": "Estética própria e consistência entre assets.",
+  "risks": [
+   "Contorno instável em animação"
+  ],
+  "alternatives": [
+   "Formas 2D com sombras chapadas"
+  ]
+ },
+ {
+  "id": "chroma-key-cleanup",
+  "name": "Chroma key e limpeza",
+  "category": "3d-compositing",
+  "narrative_intents": [
+   "continuity"
+  ],
+  "emotions": [
+   "confidence"
+  ],
+  "motion_type": "mask",
+  "contexts": [
+   "ad",
+   "institutional",
+   "documentary"
+  ],
+  "complexity": 3,
+  "feasibility": "B",
+  "engines": [
+   "ffmpeg-post",
+   "desktop-dcc-external"
+  ],
+  "requirements": "FFmpeg (disponível e testado) (colorkey/chromakey) ou editor",
+  "when_to_use": "Para colocar apresentadores/objetos filmados em fundo gráfico.",
+  "why": "Integra real e gráfico.",
+  "risks": [
+   "Spill e bordas exigem tratamento"
+  ],
+  "alternatives": [
+   "Recorte manual (rotoscoping-paint)"
+  ]
+ },
+ {
+  "id": "product-3d-animation",
+  "name": "Animação de produto 3D",
+  "category": "3d-compositing",
+  "narrative_intents": [
+   "reveal",
+   "brand"
+  ],
+  "emotions": [
+   "wonder",
+   "authority"
+  ],
+  "motion_type": "camera",
+  "contexts": [
+   "ad",
+   "ui-product"
+  ],
+  "complexity": 4,
+  "feasibility": "C",
+  "engines": [
+   "desktop-dcc-external",
+   "threejs"
+  ],
+  "requirements": "Ferramenta desktop externa (After Effects, Blender, Cinema 4D ou Houdini); não executa neste ambiente ou Three.js (pacote npm) com captura por screenshot; não testado neste ambiente para modelos leves",
+  "when_to_use": "Para mostrar produto físico com iluminação cuidadosa.",
+  "why": "Domínio total de luz e câmera.",
+  "risks": [
+   "Exige modelo 3D de qualidade"
+  ],
+  "alternatives": [
+   "Fotos com parallax (parallax-multiplane)",
+   "Imagens geradas por IA como plano"
+  ]
+ },
+ {
+  "id": "live-action-cgi-compose",
+  "name": "Composição live-action + CGI",
+  "category": "3d-compositing",
+  "narrative_intents": [
+   "continuity"
+  ],
+  "emotions": [
+   "confidence",
+   "wonder"
+  ],
+  "motion_type": "structural",
+  "contexts": [
+   "ad",
+   "trailer",
+   "documentary"
+  ],
+  "complexity": 4,
+  "feasibility": "C",
+  "engines": [
+   "desktop-dcc-external",
+   "ffmpeg-post"
+  ],
+  "requirements": "Ferramenta desktop externa (After Effects, Blender, Cinema 4D ou Houdini); não executa neste ambiente; camadas 2D simples via FFmpeg overlay",
+  "when_to_use": "Para misturar filmagem real com elementos gráficos.",
+  "why": "Realismo + imaginação.",
+  "risks": [
+   "Exige match de luz, cor e movimento"
+  ],
+  "alternatives": [
+   "Gráficos 2D sobre vídeo sem integração 3D"
+  ]
+ },
+ {
+  "id": "ai-asset-integration",
+  "name": "Integração de assets gerados por IA",
+  "category": "3d-compositing",
+  "narrative_intents": [
+   "reveal",
+   "warmth"
+  ],
+  "emotions": [
+   "wonder",
+   "curiosity"
+  ],
+  "motion_type": "structural",
+  "contexts": [
+   "ad",
+   "trailer",
+   "short-social"
+  ],
+  "complexity": 3,
+  "feasibility": "B",
+  "engines": [
+   "generative-ai-external",
+   "canvas-motion-kit",
+   "ffmpeg-post"
+  ],
+  "requirements": "Ferramenta de geração externa (não presumida) + composição em Canvas/FFmpeg",
+  "when_to_use": "Quando o conceito pede cenário, textura ou plano que código não entrega.",
+  "why": "Camadas de IA com grão e gradação comuns se integram ao motion programático.",
+  "risks": [
+   "Texto, mãos e continuidade são pontos fracos comuns em geradores",
+   "Direitos de uso e rotulagem"
+  ],
+  "alternatives": [
+   "Fotos/ilustrações fornecidas pelo usuário",
+   "Formas procedurais"
+  ],
+  "kit": [
+   "M.plane",
+   "M.grain"
+  ]
+ }
+]

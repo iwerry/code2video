@@ -1,0 +1,44 @@
+{
+  "id": "desktop-dcc-external",
+  "name": "Ferramentas desktop (After Effects, Blender, Cinema 4D, Houdini, DaVinci, Premiere)",
+  "version": "1.0.0",
+  "project_types": [
+    "3d-realistic",
+    "character-animation",
+    "compositing",
+    "color-grading",
+    "simulation"
+  ],
+  "capabilities": [
+    "3d",
+    "live-action-compose",
+    "particles"
+  ],
+  "requirements": {
+    "binaries": [],
+    "python_modules": [],
+    "node_packages": [],
+    "notes": "Rodam no computador do usuário, fora do agente."
+  },
+  "inputs": [
+    "plano de composições/camadas, expressões, parâmetros de export"
+  ],
+  "outputs": [
+    "plano e instruções (não vídeo)"
+  ],
+  "limitations": [
+    "o agente NÃO executa estas ferramentas: entrega plano e código de apoio marcados como 'generated'/'planned'"
+  ],
+  "render_requirements": "n/a",
+  "validation": {
+    "method": "o usuário executa e devolve o resultado para inspeção"
+  },
+  "availability": {
+    "probes": []
+  },
+  "verification": {
+    "state": "planned",
+    "evidence": []
+  },
+  "external": true
+}

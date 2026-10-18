@@ -1,0 +1,157 @@
+[
+ {
+  "id": "hud-fui-design",
+  "name": "HUD e interfaces futuristas (FUI)",
+  "category": "data-ui",
+  "narrative_intents": [
+   "tech-data",
+   "reveal"
+  ],
+  "emotions": [
+   "authority",
+   "curiosity"
+  ],
+  "motion_type": "structural",
+  "contexts": [
+   "ui-product",
+   "trailer",
+   "ad",
+   "data-story"
+  ],
+  "complexity": 4,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit",
+   "svg-gsap"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado)",
+  "when_to_use": "Para tecnologia, dados e 'sistema ligando'.",
+  "why": "Detalhe e micro-interações sugerem sofisticação técnica.",
+  "risks": [
+   "Densidade demais ilegível em tela pequena"
+  ],
+  "alternatives": [
+   "Painel único limpo com contador"
+  ],
+  "kit": [
+   "M.trim",
+   "M.counter"
+  ]
+ },
+ {
+  "id": "lower-thirds",
+  "name": "Lower thirds básicos",
+  "category": "data-ui",
+  "narrative_intents": [
+   "read-text"
+  ],
+  "emotions": [
+   "confidence",
+   "authority"
+  ],
+  "motion_type": "structural",
+  "contexts": [
+   "documentary",
+   "institutional",
+   "explainer"
+  ],
+  "complexity": 2,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado)",
+  "when_to_use": "Identificar pessoas, cargos e legendas.",
+  "why": "Informação sem competir com a imagem.",
+  "risks": [
+   "Fora da zona segura em vertical"
+  ],
+  "alternatives": [
+   "Texto simples em baixo"
+  ],
+  "kit": [
+   "M.reveal",
+   "M.kinetic"
+  ]
+ },
+ {
+  "id": "counter-number-roll",
+  "name": "Contador numérico animado",
+  "category": "data-ui",
+  "narrative_intents": [
+   "scale",
+   "emphasis",
+   "impact"
+  ],
+  "emotions": [
+   "surprise",
+   "tension",
+   "urgency"
+  ],
+  "motion_type": "typographic",
+  "contexts": [
+   "data-story",
+   "short-social",
+   "ad",
+   "explainer"
+  ],
+  "complexity": 2,
+  "feasibility": "A",
+  "engines": [
+   "canvas-motion-kit"
+  ],
+  "requirements": "Canvas + motion-kit (já incluído; testado)",
+  "when_to_use": "Para dar peso a um número que precisa ser lembrado.",
+  "why": "O olho acompanha a subida e o número final carrega o impacto.",
+  "risks": [
+   "Largura variável faz o número 'dançar': ancore à esquerda ou meça a string final"
+  ],
+  "alternatives": [
+   "Número estático em escala grande"
+  ],
+  "kit": [
+   "M.counter",
+   "M.fmtInt",
+   "M.fitText"
+  ]
+ },
+ {
+  "id": "svg-infographic-animation",
+  "name": "Infográfico animado em SVG",
+  "category": "data-ui",
+  "narrative_intents": [
+   "process",
+   "scale",
+   "tech-data"
+  ],
+  "emotions": [
+   "confidence",
+   "curiosity"
+  ],
+  "motion_type": "path",
+  "contexts": [
+   "explainer",
+   "data-story",
+   "institutional"
+  ],
+  "complexity": 3,
+  "feasibility": "B",
+  "engines": [
+   "svg-gsap",
+   "canvas-motion-kit"
+  ],
+  "requirements": "SVG + GSAP ou SMIL; não testado neste ambiente",
+  "when_to_use": "Para dados e processos com elementos editáveis.",
+  "why": "Elementos semânticos permitem reuso e exportar Lottie/SVG.",
+  "risks": [
+   "Layout complexo pede GSAP"
+  ],
+  "alternatives": [
+   "Gráfico em Canvas"
+  ],
+  "kit": [
+   "M.trim",
+   "M.counter"
+  ]
+ }
+]

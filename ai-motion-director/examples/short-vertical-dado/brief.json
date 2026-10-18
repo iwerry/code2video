@@ -1,0 +1,31 @@
+{
+  "objective": "fazer o público lembrar de um número: R$ 3.200 perdidos por ano em taxas bancárias",
+  "audience": "brasileiros adultos, rolando Reels, muitos sem som",
+  "message": "Brasileiros perdem em média R$ 3.200 por ano em taxas bancárias sem perceber.",
+  "emotion": {
+    "from": "indiferença",
+    "to": "incômodo e clareza"
+  },
+  "platform": "Instagram Reels",
+  "format": "9:16",
+  "duration_s": 8,
+  "narrative_strategy": "sangramento invisível: taxas pingam cada vez mais rápido, silêncio, o total estala",
+  "visual_direction": "verde-escuro #0a2e1f e amarelo #ffd23f; número-herói ocupando ~90% da largura útil",
+  "sound_direction": "ticks por ficha + riser; 150 ms de silêncio; impacto grave; cauda",
+  "differentiator": "o número é construído pelas taxas pequenas que o espectador reconhece, não apresentado de uma vez",
+  "constraints": [
+    "sem logo fornecido",
+    "sem trilha: SFX sintetizados (rascunho)"
+  ],
+  "success_criteria": [
+    "o número R$ 3.200 é legível por ≥2 s no fim",
+    "existe um momento de silêncio antes do impacto",
+    "texto dentro da zona segura 9:16"
+  ],
+  "assumptions": [
+    "1080x1920",
+    "8 s",
+    "som ligado"
+  ],
+  "status": "planned"
+}
