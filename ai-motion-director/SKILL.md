@@ -62,6 +62,12 @@ Peça livre ou modo específico; os modos compartilham os mesmos princípios.
 
 "Faça um vídeo de 15 s para o lançamento do X" é End-to-End: não pare no roteiro, entregue o MP4.
 
+## Execução local e portabilidade
+- Funcione em qualquer agente capaz de ler arquivos e executar ferramentas locais; não presuma APIs de Skills nem ferramentas específicas de um fornecedor.
+- Produção procedural sem APIs externas: use código próprio, assets locais e motores instalados. Não faça chamadas de geração remota, telemetria ou downloads durante o render.
+- Consulte `styles/` sob demanda: dez presets de direção, não dez renders obrigatórios. Se o usuário pedir comparação, apresente dez opções e renderize apenas as solicitadas.
+- Sem terminal ou motor disponível, entregue código e instruções, sem afirmar execução.
+
 ## Princípios de decisão
 - **Função antes de efeito.** O que o espectador entende ou sente por causa deste movimento? Se for "fica bonito", corte ou simplifique.
 - **Contraste cria impacto.** Escala, velocidade, luz, silêncio; o clímax precisa ser *preparado*.
@@ -76,7 +82,7 @@ Peça livre ou modo específico; os modos compartilham os mesmos princípios.
 - Não declare testes passados sem executá-los.
 
 ## Entrega
-Pedido pequeno: seções fundidas. Vídeo completo, na ordem: Diagnóstico → Conceito e justificativa → Estrutura narrativa → Roteiro e storyboard → Direção de motion, arte e áudio → Workflow/código → **Vídeo renderizado** → Avaliação (técnica e criativa) e melhorias. Modelos em `references/script-storyboard.md`; exemplos reais em `examples/`. Envie o MP4 (e o fonte, se útil) com `SendUserFile` e uma linha de contexto.
+Pedido pequeno: seções fundidas. Vídeo completo, na ordem: Diagnóstico → Conceito e justificativa → Estrutura narrativa → Roteiro e storyboard → Direção de motion, arte e áudio → Workflow/código → **Vídeo renderizado** → Avaliação (técnica e criativa) e melhorias. Modelos em `references/script-storyboard.md`; exemplos reais em `examples/`. Entregue o MP4 (e o fonte, se útil) pelo mecanismo de arquivos disponível e uma linha de contexto.
 
 ## Mudar o Core
 Só quando mudar um contrato ou a lógica de decisão. Novas técnicas, motores, perfis, estilos, módulos e integrações **não** exigem mudar este arquivo (exceto citar o id de um módulo novo na tabela; `registry.py check` avisa). Se mudar, documente em `CHANGELOG.md` e preserve a compatibilidade (`core/core.json → contract_version`).

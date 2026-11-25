@@ -2,6 +2,12 @@
 
 Formato inspirado em Keep a Changelog. / Format inspired by Keep a Changelog.
 
+## [1.1.0] — produção local e estilos
+- Sete novos presets, preservando os três existentes.
+- Aplicação da paleta selecionada no scaffold Canvas.
+- Diretrizes de portabilidade entre agentes e produção procedural sem APIs externas.
+- Novos presets ainda sem verificação visual de render; pacote instalável precisa ser regenerado.
+
 ## [1.0.0] — arquitetura modular / modular architecture
 
 ### Compatibilidade / Compatibility

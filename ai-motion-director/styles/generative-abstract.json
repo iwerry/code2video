@@ -1,0 +1,21 @@
+{
+  "id": "generative-abstract",
+  "name": "Abstrato generativo",
+  "palette": {
+    "bg": "#101020",
+    "ink": "#e5e5ff",
+    "accent": "#a36aff",
+    "dim": "#777777"
+  },
+  "easing": [
+    "inOutCubic",
+    "outCubic"
+  ],
+  "tempo": "variável",
+  "motion_language": "partículas semeadas, ondas e geometria procedural",
+  "sound": "ambiência sintética",
+  "avoid": [
+    "movimento sem função",
+    "texto ilegível"
+  ]
+}

@@ -6,8 +6,11 @@
 
 # Português (Brasil)
 
+## Atualização 1.1 — produção local
+Dez presets de direção visual em `ai-motion-director/styles/`, com aplicação da paleta no scaffold. A produção procedural usa código e arquivos locais, sem APIs externas. Presets são diretrizes criativas, não dez motores de render. Agentes com acesso a arquivos e terminal podem executar a skill; outros podem entregar código e plano. Os novos presets ainda não tiveram render visual verificado.
+
 ## 1. Apresentação
-**AI Motion Director** é uma *Skill* de agente (Claude) que atua como diretor criativo e engenheiro de motion: parte do objetivo, da emoção e da narrativa, escolhe técnicas de motion graphics pela **função** que cumprem e produz o vídeo **por código** (Canvas/HTML renderizado frame a frame em MP4), conferindo o resultado.
+**AI Motion Director** é uma *Skill* de agente multiplataforma que atua como diretor criativo e engenheiro de motion: parte do objetivo, da emoção e da narrativa, escolhe técnicas de motion graphics pela **função** que cumprem e produz o vídeo **por código** (Canvas/HTML renderizado frame a frame em MP4), conferindo o resultado.
 
 - **Problema que resolve:** vídeos feitos por programação costumam virar vitrine de efeitos soltos, sem narrativa, sem som sincronizado e sem checagem. Aqui a técnica é consequência da intenção, e o que foi planejado, gerado, executado e validado é registrado separadamente.
 - **Diferenciais:** Core pequeno + módulos independentes; catálogo de 72 técnicas pesquisável por intenção/emoção/viabilidade; contratos JSON validáveis entre módulos; render determinístico com som sincronizado (`window.__sfx`); regra de evidência (`executed`/`validated` exigem prova); honestidade sobre o que está disponível × testado.
@@ -136,7 +139,7 @@ Licença: **MIT** (arquivo `LICENSE`).
 # English
 
 ## 1. Overview
-**AI Motion Director** is an agent *Skill* (Claude) that works as a creative director and motion engineer: it starts from goal, emotion and narrative, picks motion-graphics techniques by the **function** they serve, and produces the video **in code** (Canvas/HTML rendered frame by frame to MP4), checking the result.
+**AI Motion Director** is an cross-platform agent *Skill* that works as a creative director and motion engineer: it starts from goal, emotion and narrative, picks motion-graphics techniques by the **function** they serve, and produces the video **in code** (Canvas/HTML rendered frame by frame to MP4), checking the result.
 
 - **Problem it solves:** programmatic videos tend to become a showcase of unrelated effects, with no narrative, no synced sound and no review. Here technique follows intent, and what was planned, generated, executed and validated is recorded separately.
 - **Differentiators:** small Core + independent modules; a 72-technique catalog searchable by intent/emotion/feasibility; validated JSON contracts between modules; deterministic rendering with synced sound (`window.__sfx`); evidence rule (`executed`/`validated` require proof); honesty about available × tested.

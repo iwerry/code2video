@@ -1,0 +1,21 @@
+{
+  "id": "kinetic-type",
+  "name": "Tipografia cinética",
+  "palette": {
+    "bg": "#111111",
+    "ink": "#ffffff",
+    "accent": "#ffcc00",
+    "dim": "#777777"
+  },
+  "easing": [
+    "inOutCubic",
+    "outCubic"
+  ],
+  "tempo": "rápido com pausas",
+  "motion_language": "palavras em máscaras, escala e cortes tipográficos",
+  "sound": "ticks e impactos",
+  "avoid": [
+    "movimento sem função",
+    "texto ilegível"
+  ]
+}

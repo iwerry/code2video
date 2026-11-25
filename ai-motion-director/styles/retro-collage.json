@@ -1,0 +1,21 @@
+{
+  "id": "retro-collage",
+  "name": "Colagem editorial retrô",
+  "palette": {
+    "bg": "#e9dfca",
+    "ink": "#28231e",
+    "accent": "#c44832",
+    "dim": "#777777"
+  },
+  "easing": [
+    "inOutCubic",
+    "outCubic"
+  ],
+  "tempo": "recortado",
+  "motion_language": "recortes, texturas e parallax",
+  "sound": "percussão seca",
+  "avoid": [
+    "movimento sem função",
+    "texto ilegível"
+  ]
+}

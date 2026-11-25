@@ -87,6 +87,10 @@ def cmd_init(a):
     dur = a.duration or round(sum(prof["duration_range_s"]) / 2 / 0.5) * 0.5
     html = open(os.path.join(proj, "index.html"), encoding="utf-8").read()
     html = META_RE.sub(f"const META = {{ width: {prof['width']}, height: {prof['height']}, duration: {dur}, fps: {prof['fps']} }};", html)
+    if a.style:
+        palette = load_json(os.path.join(ROOT, "styles", f"{a.style}.json"))["palette"]
+        palette.setdefault("dim", "#777777")
+        html = re.sub(r"const PALETTE = \{[^}]*\};", lambda _: "const PALETTE = " + json.dumps(palette) + ";", html, count=1)
     open(os.path.join(proj, "index.html"), "w", encoding="utf-8").write(html)
     json.dump({"title": a.title or os.path.basename(proj), "profile": a.profile, "style": a.style,
                "created_at": datetime.datetime.now(datetime.timezone.utc).isoformat()},

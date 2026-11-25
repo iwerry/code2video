@@ -1,0 +1,21 @@
+{
+  "id": "flat-vector",
+  "name": "Ilustração vetorial",
+  "palette": {
+    "bg": "#f5f0e8",
+    "ink": "#20252b",
+    "accent": "#2979b8",
+    "dim": "#777777"
+  },
+  "easing": [
+    "inOutCubic",
+    "outCubic"
+  ],
+  "tempo": "moderado",
+  "motion_language": "formas vetoriais, morph e personagens articulados",
+  "sound": "percussão leve",
+  "avoid": [
+    "movimento sem função",
+    "texto ilegível"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "cinematic-3d",
+  "name": "Cinemático espacial",
+  "palette": {
+    "bg": "#090e18",
+    "ink": "#e9edf4",
+    "accent": "#e7a85d",
+    "dim": "#777777"
+  },
+  "easing": [
+    "inOutCubic",
+    "outCubic"
+  ],
+  "tempo": "lento com clímax",
+  "motion_language": "perspectiva, profundidade e luz; 3D real somente com motor disponível",
+  "sound": "drones e impactos",
+  "avoid": [
+    "movimento sem função",
+    "texto ilegível"
+  ]
+}

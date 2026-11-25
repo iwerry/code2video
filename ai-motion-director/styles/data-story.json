@@ -1,0 +1,21 @@
+{
+  "id": "data-story",
+  "name": "Visualização de dados",
+  "palette": {
+    "bg": "#101b29",
+    "ink": "#e9f1fa",
+    "accent": "#40d9ba",
+    "dim": "#777777"
+  },
+  "easing": [
+    "inOutCubic",
+    "outCubic"
+  ],
+  "tempo": "progressivo",
+  "motion_language": "gráficos, contadores e revelação de dados",
+  "sound": "pulsos discretos",
+  "avoid": [
+    "movimento sem função",
+    "texto ilegível"
+  ]
+}

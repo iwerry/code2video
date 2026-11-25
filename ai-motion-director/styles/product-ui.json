@@ -1,0 +1,21 @@
+{
+  "id": "product-ui",
+  "name": "Demonstração de produto",
+  "palette": {
+    "bg": "#eef2f7",
+    "ink": "#172033",
+    "accent": "#625bf6",
+    "dim": "#777777"
+  },
+  "easing": [
+    "inOutCubic",
+    "outCubic"
+  ],
+  "tempo": "preciso",
+  "motion_language": "cards, cursor, foco e transições de interface",
+  "sound": "cliques suaves",
+  "avoid": [
+    "movimento sem função",
+    "texto ilegível"
+  ]
+}
